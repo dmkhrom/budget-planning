@@ -1,13 +1,18 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+  font-family: 'Avenir Next';
+  src: url('./assets/fonts/AvenirNextCyr-Regular.woff'),
+  url('./assets/fonts/AvenirNextCyr-Regular.woff2');
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body, html {
+  margin: 0;
+  font-family: 'Avenir Next', sans-serif;
+}
+
+h1 {
+  margin: 0;
+}
+
+input {
+  all: unset;
 }
