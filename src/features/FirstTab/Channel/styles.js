@@ -15,13 +15,11 @@ export const ChannelItem = styled.div`
   width: 100%;
   height: 52px;
   margin: 0 auto;
-  background: ${props => props.isActive ?
-		'lightgreen' :
-		'#f6f7fb'};
+  background: #f6f7fb;
   border: 1px solid rgba(178, 187, 213, 0.5);
-  border-radius: ${props => props.isActive ?
-		'4px 4px 0 0' :
-		'4px'};
+  border-radius: ${props => props.isActive 
+		? '4px 4px 0 0' 
+		: '4px'};
   padding: 0 15px 0 16px;
   cursor: pointer;
   box-sizing: border-box;
@@ -190,9 +188,9 @@ export const BreakdownSubtitle = styled.div`
 export const BudgetBreakdownDataWrapper = styled.div`
 	display: flex;
 	width: 100%;
-	margin: 0 auto;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	box-sizing: border-box;
+	gap: 23px;
 `;
 
 export const BudgetBreakdownItemWrapper = styled.div`

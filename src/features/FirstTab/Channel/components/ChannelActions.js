@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import channelActionsIcon from 'assets/icons/actions_icon.svg';
 import { ActionsItem, ActionsMenu, ChannelActionsWrapper } from 'features/FirstTab/Channel/styles';
 
-export const ChannelActions = ({ editChannelName, removeChannel }) => {
+export const ChannelActions = ({ id, editChannelName, removeChannel }) => {
 
 	const [ showActions, setShowActions ] = useState(false);
 
@@ -30,7 +30,7 @@ export const ChannelActions = ({ editChannelName, removeChannel }) => {
 	};
 	const handleRemove = (e) => {
 		e.stopPropagation();
-		removeChannel();
+		removeChannel(id);
 		setShowActions(false);
 	};
 

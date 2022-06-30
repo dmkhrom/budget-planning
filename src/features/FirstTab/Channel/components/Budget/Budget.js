@@ -1,30 +1,83 @@
-import React from 'react';
+import React, { useCallback, useMemo } from 'react';
+import { debounce } from 'lodash';
 import { BudgetBreakdownControl } from 'features/FirstTab/Channel/components/Budget/BudgetBreakdown/BudgetBreakdown';
 import { BudgetControls } from 'features/FirstTab/Channel/components/Budget/BudgetControls/BudgetControls';
 import { BudgetCommonWrapper } from 'features/FirstTab/Channel/styles';
+import {
+	getDataToUpdate,
+	recalculateAmount,
+	recalculateBreakdownData,
+	updateObjectValueInArrayOfObjects
+} from 'features/utils';
 import useChannelsControl from 'hooks/useChannelsControl';
 
 export const Budget = ({ channelData }) => {
 
 	const {
-		onChangeActiveChannelData,
+		onUpdateActiveChannelData,
 	} = useChannelsControl();
 
-	const selectBudgetFrequency = (e) => {
-		onChangeActiveChannelData('frequency', e.target.innerText);
+	const changeBudgetFrequency = (e) => {
+
+		if(e.target.innerText === channelData.frequency) {
+			return;
+		}
+
+		const dataToUpdate = getDataToUpdate(
+			channelData.frequency,
+			e.target.innerText,
+			channelData.breakdownData,
+			channelData.amount
+		);
+		onUpdateActiveChannelData(dataToUpdate);
 	};
 
 	const handleAmountChange = (e) => {
-		onChangeActiveChannelData('amount', e.target.value);
+		const parsedValue = parseFloat(e.target.value.replace(/,/g, ''));
+		onUpdateActiveChannelData({
+			breakdownData: recalculateBreakdownData(
+				[ ...channelData.breakdownData ],
+				parsedValue
+			),
+			amount: parsedValue
+		});
 	};
 
 	const changeAllocationType = (e) => {
-		onChangeActiveChannelData('allocation', e.target.innerText);
+		onUpdateActiveChannelData({
+			...(e.target.innerText === 'Equal' &&
+				{
+					breakdownData: recalculateBreakdownData(
+						[ ...channelData.breakdownData ],
+						channelData.amount
+					)
+				}
+			),
+			allocation: e.target.innerText
+		});
 	};
 
 	const changeBreakdownItemValue = (e) => {
-		console.log('TARGET VALUE', {na: e.target.name, val: e.target.value});
+		const { value, name } = e.target;
+
+		if (!value.length) {
+			return;
+		}
+		const updatedBreakdownData = updateObjectValueInArrayOfObjects(
+			[ ...channelData.breakdownData ],
+			'name',
+			name,
+			{ value: parseFloat(value.replace(/,/g, '')) }
+		);
+		onUpdateActiveChannelData({
+			amount: recalculateAmount(updatedBreakdownData),
+			breakdownData: updatedBreakdownData
+		});
 	};
+
+	const debouncedChangeBreakdownItemValue = useCallback(() =>
+		debounce(changeBreakdownItemValue, 200)
+	, [ channelData ]);
 
 	return (
 		<BudgetCommonWrapper>
@@ -32,14 +85,15 @@ export const Budget = ({ channelData }) => {
 				budgetFrequency={channelData?.frequency}
 				annualAmount={channelData?.amount}
 				handleAmountChange={handleAmountChange}
-				selectBudgetFrequency={selectBudgetFrequency}
+				selectBudgetFrequency={changeBudgetFrequency}
 				changeAllocationType={changeAllocationType}
 				allocationType={channelData?.allocation}
 				disabledBaselineControl={channelData?.allocation === 'Manual'}
 			/>
 			<BudgetBreakdownControl
+				isQuarters={channelData?.frequency === 'Quarterly'}
 				disableBreakdownItems={channelData?.allocation === 'Equal'}
-				handleChangeBreakdownItemValue={changeBreakdownItemValue}
+				handleChangeBreakdownItemValue={debouncedChangeBreakdownItemValue()}
 				breakdownData={channelData.breakdownData}
 			/>
 		</BudgetCommonWrapper>

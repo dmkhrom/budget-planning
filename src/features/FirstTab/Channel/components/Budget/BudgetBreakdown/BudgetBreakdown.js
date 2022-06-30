@@ -7,6 +7,7 @@ import {
 } from 'features/FirstTab/Channel/styles';
 
 export const BudgetBreakdownControl = ({
+	isQuarters,
 	breakdownData,
 	handleChangeBreakdownItemValue,
 	disableBreakdownItems
@@ -20,6 +21,7 @@ export const BudgetBreakdownControl = ({
 		<BudgetBreakdownDataWrapper>
 			{breakdownData.map(item => (
 				<BudgetBreakdownItem
+					isQuarters={isQuarters}
 					key={item.name}
 					itemLabel={item.name}
 					itemValue={item.value}

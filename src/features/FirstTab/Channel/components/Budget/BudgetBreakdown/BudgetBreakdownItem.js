@@ -6,10 +6,17 @@ import {
 	InputWrapper
 } from 'features/FirstTab/Channel/styles';
 
-export const BudgetBreakdownItem = ({itemLabel, itemValue, handleChangeBreakdownItemValue, disabled}) => (
+export const BudgetBreakdownItem = (
+	{
+		isQuarters,
+		itemLabel,
+		itemValue,
+		handleChangeBreakdownItemValue,
+		disabled
+	}) => (
 	<BudgetBreakdownItemWrapper>
 		<BreakdownItemLabel>
-			{itemLabel}
+			{`${itemLabel} ${ isQuarters ? new Date().getFullYear().toString().substr(-2) : ''}`}
 		</BreakdownItemLabel>
 		<InputWrapper>
 			<AmountInput

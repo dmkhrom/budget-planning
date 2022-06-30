@@ -11,7 +11,7 @@ import {
 } from './styles';
 
 export const Header = () => {
-	const { addNewChannel } = useChannelsControl();
+	const { onAddNewChannel } = useChannelsControl();
 	return (
 		<HeaderWrapper>
 			<Title>Build your budget plan</Title>
@@ -21,7 +21,7 @@ export const Header = () => {
 					Setup your added channels by adding baseline budgets out of your total
 					budget. See the forecast impact with the help of tips and insights.
 				</SetupChannelDescription>
-				<AddButton onClick={addNewChannel} name={BUTTONS_NAMES.addChannel}/>
+				<AddButton onClick={onAddNewChannel} name={BUTTONS_NAMES.addChannel}/>
 			</SetupChannelWrapper>
 		</HeaderWrapper>
 	);

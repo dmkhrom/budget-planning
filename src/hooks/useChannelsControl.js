@@ -1,45 +1,67 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { v4 } from 'uuid';
 import { getInitialChannelData } from 'constants/common';
-import { addChannel, setActiveChannel, updateChannelsData } from 'redux/reducers/channels';
+import { updateObjectValueInArrayOfObjects } from 'features/utils';
+import { addChannel, deleteChannel, setActiveChannel, updateChannelsData } from 'redux/reducers/channels';
 
-const useChannelsControl = (channelData) => {
+const useChannelsControl = () => {
 	const { channels, activeChannel } = useSelector((state) => state.channelsData);
 	const dispatch = useDispatch();
 
-	const addNewChannel = () => {
+	const updateChannels = (channelsArray) => {
+		console.log();
+		const channelIndex = channelsArray.findIndex(item => item.id === activeChannel.id);
+		channelsArray[channelIndex] = activeChannel;
+
+		console.log('activeChannel', { channelIndex, channels, channelsArray, activeChannel });
+		dispatch(updateChannelsData(channelsArray));
+	};
+
+	const onAddNewChannel = (e) => {
+		e.stopPropagation();
 		const id = v4();
 		const newChannel = getInitialChannelData(id);
-		dispatch(addChannel(newChannel));
-		console.log('addNewChannel', newChannel);
+		if(!activeChannel) {
+			dispatch(addChannel(newChannel));
+			return;
+		}
+		updateChannels([...channels, newChannel]);
+		dispatch(setActiveChannel(newChannel));
 	};
 
-	const onChangeActiveChannelData = (key, value) => {
-		console.log('VALUE', { value, activeChannel });
-		dispatch(setActiveChannel({ ...activeChannel, [key]: value }));
+	const onUpdateActiveChannelData = (newValue) => {
+		dispatch(setActiveChannel({ ...activeChannel, ...newValue }));
 	};
 
-	const changeActiveChannel = () => {
+	const onChangeActiveChannel = (channelData) => {
+		if(activeChannel) {
+			updateChannels([...channels]);
+		}
 		dispatch(setActiveChannel(channelData));
-		console.log('changeActiveChannel', channelData);
 	};
 
-	const deleteChannel = () => {
-		console.log('Delete channel');
+	const onDeleteChannel = (id) => {
+		if(id === activeChannel.id) {
+			dispatch(setActiveChannel(null));
+		}
+		dispatch(deleteChannel(id));
 	};
 
 	const onUpdateChannelName = (name, channelId) => {
-		const channelsList = [...channels];
-		const channelIndex = channelsList.findIndex(item => item.id === channelId);
-		channelsList[channelIndex] = {...channels[channelIndex], name: name};
-		dispatch(updateChannelsData(channelsList));
+		const updatedChannelsList = updateObjectValueInArrayOfObjects(
+			[...channels],
+			'id',
+			channelId,
+			{ name: name }
+		);
+		dispatch(updateChannelsData(updatedChannelsList));
 	};
 
 	return {
-		addNewChannel,
-		changeActiveChannel,
-		deleteChannel,
-		onChangeActiveChannelData,
+		onAddNewChannel,
+		onChangeActiveChannel,
+		onDeleteChannel,
+		onUpdateActiveChannelData,
 		onUpdateChannelName
 	};
 };

@@ -1,4 +1,4 @@
-export const MONTHS = [
+export const BREAKDOWN_MONTHS = [
 	{ name: 'Jan', value: 0 },
 	{ name: 'Feb', value: 0 },
 	{ name: 'Mar', value: 0 },
@@ -13,7 +13,7 @@ export const MONTHS = [
 	{ name: 'Dec', value: 0 },
 ];
 
-export const QUARTERS = [
+export const BREAKDOWN_QUARTERS = [
 	{ name: 'First Quarter', value: 0 },
 	{ name: 'Second Quarter', value: 0 },
 	{ name: 'Third Quarter', value: 0 },
@@ -25,8 +25,7 @@ export const getInitialChannelData = (id) => ({
 	name: 'New Channel',
 	allocation: 'Equal',
 	frequency: 'Annually',
-	breakdownData: MONTHS,
-	isOpened: false,
+	breakdownData: BREAKDOWN_MONTHS,
 	amount: 0,
 });
 
@@ -48,7 +47,7 @@ export const NAVIGATION_TABS = [
 ];
 
 export const BUDGET_FREQUENCY_ITEMS = [
-	'Annually', 'Monthly', 'Quarterly '
+	'Annually', 'Monthly', 'Quarterly'
 ];
 
 export const ALLOCATION_ITEMS = [

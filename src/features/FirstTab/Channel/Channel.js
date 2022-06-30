@@ -13,10 +13,10 @@ export const Channel = ({ isActive, channelData, activeChannelData }) => {
 	const [inputRef, setInputFocus] = useFocus();
 
 	const {
-		changeActiveChannel,
-		deleteChannel,
+		onChangeActiveChannel,
+		onDeleteChannel,
 		onUpdateChannelName
-	} = useChannelsControl(channelData);
+	} = useChannelsControl();
 
 	useEffect(() => {
 		setInputFocus();
@@ -33,8 +33,14 @@ export const Channel = ({ isActive, channelData, activeChannelData }) => {
 
 	const handleChangeActiveChannel = (e) => {
 		const {className} = e.target;
-		if(className.includes('channel-item') && !isActive) {
-			changeActiveChannel();
+		console.log('!isActive || !activeChannelData', {das: !isActive || !activeChannelData});
+		if(className.includes('channel-item') && (!isActive || !activeChannelData)) {
+			onChangeActiveChannel(channelData);
+			return;
+		}
+		if(className.includes('channel-item') && isActive) {
+			onChangeActiveChannel(null);
+			return;
 		}
 	};
 
@@ -54,8 +60,9 @@ export const Channel = ({ isActive, channelData, activeChannelData }) => {
 					inputRef={inputRef}
 				/>
 				<ChannelActions
+					id={channelData.id}
 					editChannelName={setIsEditChannelName}
-					removeChannel={deleteChannel}
+					removeChannel={onDeleteChannel}
 				/>
 			</ChannelItem>
 			{isActive && <ChannelCollapse>
