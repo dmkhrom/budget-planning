@@ -1,23 +1,20 @@
 import React from 'react';
+import { ItemLabel } from 'components/ItemLabel/ItemLabel';
 import {
 	AmountInput,
-	BreakdownItemLabel,
 	BudgetBreakdownItemWrapper,
 	InputWrapper
 } from 'features/FirstTab/Channel/styles';
 
 export const BudgetBreakdownItem = (
 	{
-		isQuarters,
 		itemLabel,
 		itemValue,
 		handleChangeBreakdownItemValue,
 		disabled
 	}) => (
 	<BudgetBreakdownItemWrapper>
-		<BreakdownItemLabel>
-			{`${itemLabel} ${ isQuarters ? new Date().getFullYear().toString().substr(-2) : ''}`}
-		</BreakdownItemLabel>
+		<ItemLabel value={`${itemLabel} ${new Date().getFullYear().toString().substr(-2)}`} />
 		<InputWrapper>
 			<AmountInput
 				value={itemValue}

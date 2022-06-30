@@ -11,7 +11,7 @@ export const BudgetBaselineControl = ({
 	<BudgetBaselineControlWrapper>
 		<LabelWithTooltip
 			label='Baseline [Annual] Budget'
-			tooltipInfo='Annual budget amount'
+			tooltipDescription='Annual budget amount'
 		/>
 		<NumericInput
 			value={annualAmount}

@@ -32,7 +32,7 @@ export const Budget = ({ channelData }) => {
 		onUpdateActiveChannelData(dataToUpdate);
 	};
 
-	const handleAmountChange = (e) => {
+	const annualBudgetAmountChange = (e) => {
 		const parsedValue = parseFloat(e.target.value.replace(/,/g, ''));
 		onUpdateActiveChannelData({
 			breakdownData: recalculateBreakdownData(
@@ -79,19 +79,22 @@ export const Budget = ({ channelData }) => {
 		debounce(changeBreakdownItemValue, 200)
 	, [ channelData ]);
 
+	const debouncedAnnualBudgetAmountChange = useCallback(() =>
+		debounce(annualBudgetAmountChange, 200)
+	, [ channelData ]);
+
 	return (
 		<BudgetCommonWrapper>
 			<BudgetControls
 				budgetFrequency={channelData?.frequency}
 				annualAmount={channelData?.amount}
-				handleAmountChange={handleAmountChange}
+				handleAmountChange={debouncedAnnualBudgetAmountChange()}
 				selectBudgetFrequency={changeBudgetFrequency}
 				changeAllocationType={changeAllocationType}
 				allocationType={channelData?.allocation}
 				disabledBaselineControl={channelData?.allocation === 'Manual'}
 			/>
 			<BudgetBreakdownControl
-				isQuarters={channelData?.frequency === 'Quarterly'}
 				disableBreakdownItems={channelData?.allocation === 'Equal'}
 				handleChangeBreakdownItemValue={debouncedChangeBreakdownItemValue()}
 				breakdownData={channelData.breakdownData}

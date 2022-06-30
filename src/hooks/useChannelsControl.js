@@ -8,12 +8,11 @@ const useChannelsControl = () => {
 	const { channels, activeChannel } = useSelector((state) => state.channelsData);
 	const dispatch = useDispatch();
 
-	const updateChannels = (channelsArray) => {
-		console.log();
-		const channelIndex = channelsArray.findIndex(item => item.id === activeChannel.id);
-		channelsArray[channelIndex] = activeChannel;
+	const onUpdateChannels = (channelsArray, updatedChannel) => {
+		const channelIndex = channelsArray.findIndex(item => item.id === updatedChannel.id);
 
-		console.log('activeChannel', { channelIndex, channels, channelsArray, activeChannel });
+		console.log('onUpdateChannels', {channelsArray, updatedChannel});
+		channelsArray[channelIndex] = updatedChannel;
 		dispatch(updateChannelsData(channelsArray));
 	};
 
@@ -25,7 +24,7 @@ const useChannelsControl = () => {
 			dispatch(addChannel(newChannel));
 			return;
 		}
-		updateChannels([...channels, newChannel]);
+		onUpdateChannels([...channels, newChannel], activeChannel);
 		dispatch(setActiveChannel(newChannel));
 	};
 
@@ -35,7 +34,7 @@ const useChannelsControl = () => {
 
 	const onChangeActiveChannel = (channelData) => {
 		if(activeChannel) {
-			updateChannels([...channels]);
+			onUpdateChannels([...channels], activeChannel);
 		}
 		dispatch(setActiveChannel(channelData));
 	};
@@ -62,7 +61,8 @@ const useChannelsControl = () => {
 		onChangeActiveChannel,
 		onDeleteChannel,
 		onUpdateActiveChannelData,
-		onUpdateChannelName
+		onUpdateChannelName,
+		onUpdateChannels
 	};
 };
 

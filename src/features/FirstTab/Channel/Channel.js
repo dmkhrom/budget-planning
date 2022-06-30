@@ -32,15 +32,13 @@ export const Channel = ({ isActive, channelData, activeChannelData }) => {
 	};
 
 	const handleChangeActiveChannel = (e) => {
-		const {className} = e.target;
-		console.log('!isActive || !activeChannelData', {das: !isActive || !activeChannelData});
-		if(className.includes('channel-item') && (!isActive || !activeChannelData)) {
+		e.stopPropagation();
+		if((!isActive || !activeChannelData)) {
 			onChangeActiveChannel(channelData);
 			return;
 		}
-		if(className.includes('channel-item') && isActive) {
+		if(isActive) {
 			onChangeActiveChannel(null);
-			return;
 		}
 	};
 
@@ -51,7 +49,7 @@ export const Channel = ({ isActive, channelData, activeChannelData }) => {
 
 	return (
 		<ChannelWrapper>
-			<ChannelItem className='channel-item' isActive={isActive} onClick={handleChangeActiveChannel}>
+			<ChannelItem isActive={isActive} onClick={handleChangeActiveChannel}>
 				<ChannelData
 					channelName={channelName}
 					isEdit={isEditChannelName}

@@ -6,6 +6,7 @@ export const NumericInput = ({value, inputRef, handleChange,  ...props}) => (
 		value={value}
 		onChange={handleChange}
 		onClick={(e) => e.stopPropagation()}
+		ref={inputRef}
 		{...props}
 	/>
 );

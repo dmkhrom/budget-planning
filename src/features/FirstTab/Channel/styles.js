@@ -26,6 +26,7 @@ export const ChannelItem = styled.div`
   & .chevron-icon {
   	height: 10px;
   	margin-right: 30px;
+  	transform: rotate(${props => props.isActive ? '180deg' : '0'});
   }
   & .channel-icon {
   	height: 36px;
@@ -196,14 +197,6 @@ export const BudgetBreakdownDataWrapper = styled.div`
 export const BudgetBreakdownItemWrapper = styled.div`
 	width: 160px;
   margin-bottom: 24px;  
-`;
-
-export const BreakdownItemLabel = styled.div`
-	font-weight: 400;
-  font-size: 14px;
-  line-height: 21px;
-  color: #2f3b66;
-  margin-bottom: 8px;
 `;
 
 export const InputWrapper = styled.span`

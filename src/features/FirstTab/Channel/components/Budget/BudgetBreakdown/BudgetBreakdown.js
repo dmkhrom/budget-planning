@@ -21,7 +21,6 @@ export const BudgetBreakdownControl = ({
 		<BudgetBreakdownDataWrapper>
 			{breakdownData.map(item => (
 				<BudgetBreakdownItem
-					isQuarters={isQuarters}
 					key={item.name}
 					itemLabel={item.name}
 					itemValue={item.value}
