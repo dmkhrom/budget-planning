@@ -123,7 +123,7 @@ export const BreakdownValueWrapper = styled.div`
   & .edit-icon {
   	position: absolute;
   	bottom: 10px;
-  	right: 0px;
+  	right: 0;
   	z-index: 100;
   }
 `;
@@ -136,7 +136,7 @@ export const BreakdownInputWrapper = styled.div`
 
 export const BreakdownInput = styled(CustomNumericInput)`
   background: linear-gradient(360deg, #fafafc 0%, #ffffff 100%);
-  box-shadow: 0px 1px 2px #e6e8f0;
+  box-shadow: 0 1px 2px #e6e8f0;
   min-width: 80px;
   height: 32px;
   margin-right: 4px;

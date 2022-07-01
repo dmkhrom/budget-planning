@@ -9,7 +9,7 @@ export const DropdownWrapper = styled.div`
   background: linear-gradient(360deg, #fafafc 0%, #ffffff 100%);
   border: 1px solid rgba(178, 187, 213, 0.5);
   box-sizing: border-box;
-  box-shadow: 0px 1px 2px #e6e8f0;
+  box-shadow: 0 1px 2px #e6e8f0;
   border-radius: 3px;
 `;
 
@@ -20,7 +20,7 @@ export const DropdownList = styled.div`
   background: #ffffff;
   box-sizing: border-box;
   border: 1px solid rgba(178, 187, 213, 0.5);
-  box-shadow: 0px 1px 2px #e6e8f0;
+  box-shadow: 0 1px 2px #e6e8f0;
   border-radius: 3px;
   margin-top: 1px;
   z-index: 100;
@@ -46,7 +46,7 @@ export const DropdownItem = styled.div`
 `;
 
 export const DropdownSelectedItem = styled(DropdownItem)`
-  box-shadow: 0px 1px 2px #e6e8f0;
+  box-shadow: 0 1px 2px #e6e8f0;
   border-radius: 3px;
   & .chevron-icon {
     transform: rotate(${(props) => (props.isOpen ? '180deg' : '0')});

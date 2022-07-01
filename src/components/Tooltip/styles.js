@@ -12,5 +12,5 @@ export const TooltipInfo = styled.div`
   border: 1px solid rgba(178, 187, 213, 0.2);
   cursor: pointer;
   padding: 5px;
-  z-ndex: 1;
+  z-index: 10;
 `;

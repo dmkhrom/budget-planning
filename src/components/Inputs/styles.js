@@ -7,7 +7,7 @@ export const CustomInput = styled.input`
   background: linear-gradient(360deg, #fafafc 0%, #ffffff 100%);
   border: 1px solid rgba(178, 187, 213, 0.5);
   box-sizing: border-box;
-  box-shadow: 0px 1px 2px #e6e8f0;
+  box-shadow: 0 1px 2px #e6e8f0;
   border-radius: 3px;
   padding-left: 8px;
   &:focus {

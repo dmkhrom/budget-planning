@@ -66,7 +66,7 @@ export const ActionsMenu = styled.div`
   line-height: 21px;
   background: #ffffff;
   border: 1px solid rgba(178, 187, 213, 0.5);
-  box-shadow: 0px 4px 16px rgba(24, 32, 51, 0.12);
+  box-shadow: 0 4px 16px rgba(24, 32, 51, 0.12);
   border-radius: 4px;
 `;
 
@@ -91,7 +91,7 @@ export const ChannelCollapse = styled.div`
   margin-top: -1px;
   padding: 32px;
   border: 1px solid rgba(178, 187, 213, 0.5);
-  border-radius: 0px 0px 4px 4px;
+  border-radius: 0 0 4px 4px;
   box-sizing: border-box;
 `;
 
@@ -124,7 +124,7 @@ export const AllocationSwitcherWrapper = styled.div`
   display: flex;
   background: #f5f6fa;
   border: 1px solid rgba(178, 187, 213, 0.5);
-  box-shadow: 0px 1px 2px #e6e8f0;
+  box-shadow: 0 1px 2px #e6e8f0;
   border-radius: 4px;
   overflow: hidden;
 `;
@@ -210,6 +210,6 @@ export const InputWrapper = styled.span`
 
 export const AmountInput = styled(CustomNumericInput)`
   background: linear-gradient(360deg, #fafafc 0%, #ffffff 100%);
-  box-shadow: 0px 1px 2px #e6e8f0;
+  box-shadow: 0 1px 2px #e6e8f0;
   padding-left: 28px;
 `;
