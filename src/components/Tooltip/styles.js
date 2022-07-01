@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const TooltipInfo = styled.div`
   display: flex;
- 	position: absolute;
-  visibility: ${props => props.isShow ? 'visible' : 'hidden'};
+  position: absolute;
+  visibility: ${(props) => (props.isShow ? 'visible' : 'hidden')};
   left: 80%;
   bottom: 24px;
   width: 350px;

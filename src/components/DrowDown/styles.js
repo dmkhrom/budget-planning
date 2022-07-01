@@ -46,9 +46,9 @@ export const DropdownItem = styled.div`
 `;
 
 export const DropdownSelectedItem = styled(DropdownItem)`
-	box-shadow: 0px 1px 2px #e6e8f0;
-	border-radius: 3px;
-	& .chevron-icon {
-		transform: rotate(${props => props.isOpen ? '180deg' : '0'});
-	}
+  box-shadow: 0px 1px 2px #e6e8f0;
+  border-radius: 3px;
+  & .chevron-icon {
+    transform: rotate(${(props) => (props.isOpen ? '180deg' : '0')});
+  }
 `;

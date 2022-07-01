@@ -9,7 +9,7 @@ export const LabelWithTooltipWrapper = styled.div`
   color: #2f3b66;
   margin-bottom: 8px;
   & .info-icon {
-  	cursor: pointer;
-  	margin-left: 10px;
+    cursor: pointer;
+    margin-left: 10px;
   }
 `;

@@ -24,10 +24,10 @@ export const SetupChannelWrapper = styled.div`
 export const SetupChannelSubTitle = styled.div`
   top: 99px;
   margin-bottom: 8px;
-	font-weight: 600;
-	font-size: 18px;
-	line-height: 25px;
-	color: #182033;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 25px;
+  color: #182033;
 `;
 
 export const SetupChannelDescription = styled.div`
