@@ -45,7 +45,6 @@ export const Budget = ({ channelData }) => {
 			breakdownData: recalculateBreakdownData([...breakdownData], parsedValue),
 			amount: parsedValue
 		};
-		console.log(dataToUpdate);
 		dispatch(updateChannelsData(dataToUpdate));
 	};
 

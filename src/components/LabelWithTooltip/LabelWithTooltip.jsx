@@ -14,7 +14,7 @@ export const LabelWithTooltip = ({ label, tooltipDescription }) => {
 				onMouseOver={() => setIsShow(true)}
 				onMouseLeave={() => setIsShow(false)}
 			/>
-			<Tooltip isShow={isShow} tooltipDescription={tooltipDescription} />
+			<Tooltip positionX='right' isShow={isShow} tooltipDescription={tooltipDescription} />
 		</LabelWithTooltipWrapper>
 	);
 };

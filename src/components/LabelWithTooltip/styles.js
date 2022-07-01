@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const LabelWithTooltipWrapper = styled.div`
   display: flex;
+  width: fit-content;
   position: relative;
   font-weight: 400;
   font-size: 14px;

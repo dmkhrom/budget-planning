@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { ItemLabel } from 'components/ItemLabel/ItemLabel';
 import { Tooltip } from 'components/Tooltip/Tooltip';
+import { BreakDownItemValue } from 'features/SecondTab/ChannelRow/components/BreakDownItemValue';
 import {ReactComponent as CancelIcon} from 'assets/icons/cancel_icon.svg';
 import {ReactComponent as EditIcon} from 'assets/icons/edit_icon.svg';
 import {ReactComponent as SaveIcon} from 'assets/icons/save_icon.svg';
@@ -9,7 +10,7 @@ import {
 	ChannelRowBreakdownItemWrapper,
 	EditActionsWrapper,
 	BreakdownInput,
-	BreakdownInputWrapper
+	BreakdownInputWrapper,
 } from 'features/SecondTab/ChannelRow/styles';
 
 const PREFIX = '$';
@@ -52,9 +53,8 @@ export const ChannelRowBreakdownItem = ({
 	return (
 		<ChannelRowBreakdownItemWrapper
 			onMouseEnter={() => !isEdit && !showEditIcon && setShowEditIcon(true)}
-			onMouseLeave={() => {
-				setShowEditIcon(false);
-			}}>
+			onMouseLeave={() => setShowEditIcon(false)}
+		>
 			<ItemLabel value={`${itemName} ${new Date().getFullYear().toString().substr(-2)}`} />
 			<BreakdownValueWrapper>
 				{isEdit ? (
@@ -77,7 +77,7 @@ export const ChannelRowBreakdownItem = ({
 						</EditActionsWrapper>
 					</BreakdownInputWrapper>
 				) : (
-					<>{`${PREFIX} ${itemValue}`} </>
+					<BreakDownItemValue value={`${PREFIX} ${itemValue.toLocaleString()}`} />
 				)}
 				{!isEdit && showEditIcon && (
 					<EditIcon
@@ -89,14 +89,12 @@ export const ChannelRowBreakdownItem = ({
 						}}
 					/>
 				)}
-				{showTooltip && (
-					<Tooltip
-						isShow={true}
-						tooltipDescription={
-							'You can\'t edit items manually channel with budget allocation type "Equal". If you want it - please, edit channel allocation type'
-						}
-					/>
-				)}
+				<Tooltip
+					isShow={showTooltip}
+					tooltipDescription={
+						'You can\'t edit items manually channel with budget allocation type "Equal". If you want it - please, edit channel allocation type'
+					}
+				/>
 			</BreakdownValueWrapper>
 		</ChannelRowBreakdownItemWrapper>
 	);

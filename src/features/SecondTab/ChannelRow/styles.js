@@ -128,6 +128,14 @@ export const BreakdownValueWrapper = styled.div`
   }
 `;
 
+export const ItemValue = styled.div`
+	display: inline-block;
+	width: 70px;
+	text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+`;
+
 export const BreakdownInputWrapper = styled.div`
   position: relative;
   display: flex;
