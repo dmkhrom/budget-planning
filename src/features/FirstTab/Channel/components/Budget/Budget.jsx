@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import { BudgetBreakdownControl } from 'features/FirstTab/Channel/components/Budget/BudgetBreakdown/BudgetBreakdown';
 import { BudgetControls } from 'features/FirstTab/Channel/components/Budget/BudgetControls/BudgetControls';
 import { debounce } from 'lodash';
@@ -81,22 +81,15 @@ export const Budget = ({ channelData }) => {
 		dispatch(updateChannelsData(dataToUpdate));
 	};
 
-	const debouncedChangeBreakdownItemValue = useCallback(
-		() => debounce(changeBreakdownItemValue, 200),
-		[channelData]
-	);
-
-	const debouncedAnnualBudgetAmountChange = useCallback(
-		() => debounce(annualBudgetAmountChange, 200),
-		[channelData]
-	);
+	const debouncedChangeBreakdownItemValue = debounce(changeBreakdownItemValue, 200);
+	const debouncedAnnualBudgetAmountChange = debounce(annualBudgetAmountChange, 200);
 
 	return (
 		<BudgetCommonWrapper>
 			<BudgetControls
 				budgetFrequency={frequency}
 				annualAmount={amount}
-				handleAmountChange={debouncedAnnualBudgetAmountChange()}
+				handleAmountChange={debouncedAnnualBudgetAmountChange}
 				selectBudgetFrequency={changeBudgetFrequency}
 				changeAllocationType={changeAllocationType}
 				allocationType={allocation}
@@ -104,7 +97,7 @@ export const Budget = ({ channelData }) => {
 			/>
 			<BudgetBreakdownControl
 				disableBreakdownItems={allocation === 'Equal'}
-				handleChangeBreakdownItemValue={debouncedChangeBreakdownItemValue()}
+				handleChangeBreakdownItemValue={debouncedChangeBreakdownItemValue}
 				breakdownData={breakdownData}
 			/>
 		</BudgetCommonWrapper>

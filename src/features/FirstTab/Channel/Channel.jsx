@@ -1,8 +1,7 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Budget } from 'features/FirstTab/Channel/components/Budget/Budget';
 import { ChannelActions } from 'features/FirstTab/Channel/components/ChannelActions';
 import { ChannelInfo } from 'features/FirstTab/Channel/components/ChannelInfo';
-import { debounce } from 'lodash';
 import { useDispatch } from 'react-redux';
 import { ChannelCollapse, ChannelItem, ChannelWrapper } from 'features/FirstTab/Channel/styles';
 import { useFocus } from 'hooks/useFocus';
@@ -22,7 +21,6 @@ export const Channel = ({ isActive, channelData, setActiveChannelId }) => {
 	}, [ isEditChannelName ]);
 
 	const changeChannelName = (e) => {
-		e.stopPropagation();
 		const dataToUpdate = {
 			...channelData,
 			name: e.target.value
@@ -43,11 +41,6 @@ export const Channel = ({ isActive, channelData, setActiveChannelId }) => {
 		setIsEditChannelName(false);
 	};
 
-	const debouncedChannelNameChanging = useCallback(
-		() => debounce(changeChannelName, 200),
-		[channelData]
-	);
-
 	return (
 		<ChannelWrapper>
 			<ChannelItem isActive={isActive} onClick={handleChangeActiveChannel}>
@@ -55,7 +48,7 @@ export const Channel = ({ isActive, channelData, setActiveChannelId }) => {
 					channelName={name}
 					isEdit={isEditChannelName}
 					onCloseNameEdit={onCloseNameEdit}
-					changeChannelName={debouncedChannelNameChanging()}
+					changeChannelName={changeChannelName}
 					inputRef={inputRef}
 				/>
 				<ChannelActions

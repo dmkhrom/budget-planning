@@ -36,7 +36,6 @@ export const ChannelInfoWrapper = styled.div`
 
 export const ChannelNameWrapper = styled.div`
   display: flex;
-  max-width: 80%;
   align-items: center;
   font-weight: 500;
   font-size: 14px;
