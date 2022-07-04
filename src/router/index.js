@@ -20,6 +20,4 @@ export const NAVIGATION = [
 	}
 ];
 
-const Router = () => useRoutes(NAVIGATION);
-
-export default Router;
+export const Router = () => useRoutes(NAVIGATION);
