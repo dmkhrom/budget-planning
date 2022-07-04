@@ -4,9 +4,9 @@ import { CustomLink, NavigationWrapper } from './styles';
 
 export const NavBar = () => (
 	<NavigationWrapper>
-		{NAVIGATION.map((item) => item.name && (
-			<CustomLink key={item.path} to={item.path}>
-				{item.name}
+		{NAVIGATION.map((path, name) => name && (
+			<CustomLink key={path} to={path}>
+				{name}
 			</CustomLink>
 		))}
 	</NavigationWrapper>

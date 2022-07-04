@@ -34,7 +34,7 @@ module.exports = {
 				}
 			}
 		],
-		'linebreak-style': ['error', 'windows'],
+		'linebreak-style': ['error', 'unix'],
 		quotes: ['error', 'single'],
 		semi: ['error', 'always']
 	},

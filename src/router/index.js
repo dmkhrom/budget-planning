@@ -11,12 +11,12 @@ export const NAVIGATION = [
 	{
 		element: <FirstTab />,
 		name: 'Tab1',
-		path: 'tab1'
+		path: '/tab1'
 	},
 	{
 		element: <SecondTab />,
 		name: 'Tab2',
-		path: 'tab2'
+		path: '/tab2'
 	}
 ];
 
