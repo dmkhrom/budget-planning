@@ -1,9 +1,9 @@
-import { NAVIGATION } from 'constants';
 import React from 'react';
 import { Header } from 'components/Header/Header';
 import { NavBar } from 'components/NavBar/NavBar';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import { AppWrapper } from 'app/styles';
+import Router from 'router';
 
 export const App = () => {
 	return (
@@ -11,13 +11,7 @@ export const App = () => {
 			<AppWrapper>
 				<Header />
 				<NavBar />
-				<Routes>
-					{
-						NAVIGATION.map(({url, element}) => (
-							<Route key={url} path={url} element={element} />
-						))
-					}
-				</Routes>
+				<Router />
 			</AppWrapper>
 		</BrowserRouter>
 	);
