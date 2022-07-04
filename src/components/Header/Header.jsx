@@ -1,8 +1,8 @@
 import React from 'react';
 import { AddButton } from 'components/AddButton/AddButton';
 import { useDispatch } from 'react-redux';
-import { getInitialChannelData } from 'features/utils';
 import { addChannel } from 'redux/channelsSlice';
+import { getInitialChannelData } from 'utils';
 import {
 	HeaderWrapper,
 	Title,

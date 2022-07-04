@@ -1,4 +1,9 @@
-import { ALLOCATION_ITEMS, BREAKDOWN_SCHEME, BUDGET_FREQUENCY_ITEMS } from 'constants';
+import {
+	ALLOCATION_ITEMS,
+	BREAKDOWN_MONTHS,
+	BREAKDOWN_QUARTERS,
+	BUDGET_FREQUENCY_ITEMS
+} from 'constants';
 import { v4 } from 'uuid';
 
 export const getBreakDownInitialData = (breakdownArray) => breakdownArray.map(item => ({name: item, value: 0}));
@@ -8,7 +13,7 @@ export const getInitialChannelData = () => ({
 	name: 'New Channel',
 	allocation: ALLOCATION_ITEMS[0],
 	frequency: BUDGET_FREQUENCY_ITEMS[0],
-	breakdownData: getBreakDownInitialData(BREAKDOWN_SCHEME.month),
+	breakdownData: getBreakDownInitialData(BREAKDOWN_MONTHS),
 	amount: 0
 });
 
@@ -20,16 +25,6 @@ export const recalculateBreakdownData = (array, amount) =>
 		...item,
 		value: +(amount / array.length).toFixed(3)
 	}));
-
-export const updateObjectValueInArrayOfObjects = (array, searchKey, comparingKey, newValue) => {
-	const itemIndex = array.findIndex((item) => item[searchKey] === comparingKey);
-
-	array[itemIndex] = {
-		...array[itemIndex],
-		...newValue
-	};
-	return array;
-};
 
 export const updateBreakdownData = (array, itemName, value) =>
 	array.map(item => item.name === itemName ? {...item, value} : item);
@@ -49,7 +44,7 @@ export const updateDataWithFrequencyChanging = (
 		};
 	case newFrequencyType === 'Quarterly':
 		return {
-			breakdownData: recalculateBreakdownData(getBreakDownInitialData(BREAKDOWN_SCHEME.quarters), amount),
+			breakdownData: recalculateBreakdownData(getBreakDownInitialData(BREAKDOWN_QUARTERS), amount),
 			frequency: newFrequencyType,
 			allocation: 'Manual'
 		};
@@ -60,7 +55,7 @@ export const updateDataWithFrequencyChanging = (
 		};
 	case newFrequencyType === 'Monthly' && prevFrequencyType === 'Quarterly':
 		return {
-			breakdownData: recalculateBreakdownData(getBreakDownInitialData(BREAKDOWN_SCHEME.month), amount),
+			breakdownData: recalculateBreakdownData(getBreakDownInitialData(BREAKDOWN_MONTHS), amount),
 			frequency: newFrequencyType,
 			allocation: 'Manual'
 		};

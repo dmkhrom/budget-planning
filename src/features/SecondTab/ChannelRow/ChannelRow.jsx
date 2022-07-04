@@ -13,8 +13,8 @@ import {
 	ScrollActionsBlock,
 	BudgetDataRow
 } from 'features/SecondTab/ChannelRow/styles';
-import { recalculateAmount, updateBreakdownData } from 'features/utils';
 import { updateChannelsData } from 'redux/channelsSlice';
+import { recalculateAmount, updateBreakdownData } from 'utils';
 
 export const ChannelRow = ({ channelData, channels }) => {
 

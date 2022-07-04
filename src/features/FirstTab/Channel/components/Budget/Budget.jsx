@@ -4,13 +4,13 @@ import { BudgetControls } from 'features/FirstTab/Channel/components/Budget/Budg
 import { debounce } from 'lodash';
 import { useDispatch } from 'react-redux';
 import { BudgetCommonWrapper } from 'features/FirstTab/Channel/styles';
+import { updateChannelsData } from 'redux/channelsSlice';
 import {
 	updateDataWithFrequencyChanging,
 	recalculateAmount,
 	recalculateBreakdownData,
 	updateBreakdownData
-} from 'features/utils';
-import { updateChannelsData } from 'redux/channelsSlice';
+} from 'utils';
 
 export const Budget = ({ channelData }) => {
 
