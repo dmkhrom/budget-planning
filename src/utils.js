@@ -33,12 +33,12 @@ export const updateBreakdownData = (array, itemName, value) =>
 export const updateDataWithFrequencyChanging = (
 	prevFrequencyType,
 	newFrequencyType,
-	currentBreakdownData,
 	amount
 ) => {
+
 	if (newFrequencyType === 'Annually') {
 		return {
-			breakdownData: recalculateBreakdownData(currentBreakdownData, amount),
+			breakdownData: recalculateBreakdownData(getBreakDownInitialData(BREAKDOWN_MONTHS), amount),
 			frequency: newFrequencyType,
 			allocation: 'Equal'
 		};
@@ -52,14 +52,7 @@ export const updateDataWithFrequencyChanging = (
 		};
 	}
 
-	if (newFrequencyType === 'Monthly' && prevFrequencyType === 'Annually') {
-		return {
-			frequency: newFrequencyType,
-			allocation: 'Manual'
-		};
-	}
-
-	if (newFrequencyType === 'Monthly' && prevFrequencyType === 'Quarterly') {
+	if (newFrequencyType === 'Monthly') {
 		return {
 			breakdownData: recalculateBreakdownData(getBreakDownInitialData(BREAKDOWN_MONTHS), amount),
 			frequency: newFrequencyType,

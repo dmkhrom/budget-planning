@@ -25,7 +25,7 @@ export const Budget = ({ channelData }) => {
 
 		const dataToUpdate = {
 			...channelData,
-			...updateDataWithFrequencyChanging(frequency, e.target.innerText, breakdownData, amount)
+			...updateDataWithFrequencyChanging(frequency, e.target.innerText, amount)
 		};
 		dispatch(updateChannel(dataToUpdate));
 	};
@@ -39,7 +39,7 @@ export const Budget = ({ channelData }) => {
 
 		const dataToUpdate = {
 			...channelData,
-			breakdownData: recalculateBreakdownData([...breakdownData], parsedValue),
+			breakdownData: recalculateBreakdownData(breakdownData, parsedValue),
 			amount: parsedValue
 		};
 		dispatch(updateChannel(dataToUpdate));
@@ -53,7 +53,7 @@ export const Budget = ({ channelData }) => {
 		const dataToUpdate = {
 			...channelData,
 			...(e.target.innerText === 'Equal' && {
-				breakdownData: recalculateBreakdownData([...breakdownData], amount)
+				breakdownData: recalculateBreakdownData(breakdownData, amount)
 			}),
 			allocation: e.target.innerText
 		};
