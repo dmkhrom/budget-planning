@@ -11,7 +11,7 @@ export const ScrollableLayout = ({ children }) => {
 	const contentRef = useRef(null);
 
 	useEffect(() => {
-		setIsScrollVisible((contentRef?.current?.clientWidth - wrapperRef?.current?.offsetWidth) > 0);
+		setIsScrollVisible(contentRef?.current?.clientWidth - wrapperRef?.current?.offsetWidth > 0);
 	}, []);
 
 	const onScroll = () => {
