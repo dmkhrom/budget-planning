@@ -45,7 +45,7 @@ module.exports = {
 			}
 		},
 		react: {
-			'version': 'detect',
+			version: 'detect'
 		}
 	}
 };

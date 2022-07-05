@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import {ReactComponent as InfoIcon} from 'assets/icons/info_icon.svg';
+import { ReactComponent as InfoIcon } from 'assets/icons/info_icon.svg';
 import { Tooltip } from 'components';
 import { LabelWithTooltipWrapper } from 'components/LabelWithTooltip/styles';
 
@@ -11,11 +11,11 @@ export const LabelWithTooltip = ({ label, tooltipDescription }) => {
 		<LabelWithTooltipWrapper>
 			{label}
 			<InfoIcon
-				className='info-icon'
+				className="info-icon"
 				onMouseOver={() => setIsShow(true)}
 				onMouseLeave={() => setIsShow(false)}
 			/>
-			<Tooltip positionX='right' isShow={isShow} tooltipDescription={tooltipDescription} />
+			<Tooltip positionX="right" isShow={isShow} tooltipDescription={tooltipDescription} />
 		</LabelWithTooltipWrapper>
 	);
 };

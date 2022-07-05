@@ -1,7 +1,7 @@
 import { BUDGET_FREQUENCY_ITEMS } from 'constants';
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import {ReactComponent as ArrowDown} from 'assets/icons/arrow_down_icon.svg';
+import { ReactComponent as ArrowDown } from 'assets/icons/arrow_down_icon.svg';
 import {
 	DropdownItem,
 	DropdownList,
@@ -16,7 +16,7 @@ export const DropDown = ({ handleSelect, selectedItem }) => {
 		<DropdownWrapper onMouseLeave={() => setIsOpen(false)} onClick={() => setIsOpen(!isOpen)}>
 			<DropdownSelectedItem isOpen={isOpen}>
 				{selectedItem}
-				<ArrowDown className="chevron-icon"/>
+				<ArrowDown className="chevron-icon" />
 			</DropdownSelectedItem>
 			{isOpen && (
 				<DropdownList isOpen={isOpen}>

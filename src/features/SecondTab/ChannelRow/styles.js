@@ -19,10 +19,12 @@ export const ChannelInfoWrapper = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	background: linear-gradient(90deg,
-	rgba(255, 255, 255, 1) 0%,
-	rgba(169, 181, 210, 0.00005) 70%,
-	rgba(112, 126, 167, 0.067227) 100%);
+	background: linear-gradient(
+		90deg,
+		rgba(255, 255, 255, 1) 0%,
+		rgba(169, 181, 210, 0.00005) 70%,
+		rgba(112, 126, 167, 0.067227) 100%
+	);
 	mix-blend-mode: normal;
 	padding: 14px 28px;
 	box-sizing: border-box;

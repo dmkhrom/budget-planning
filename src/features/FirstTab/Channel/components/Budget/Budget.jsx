@@ -14,30 +14,26 @@ import {
 } from 'utils';
 
 export const Budget = ({ channelData }) => {
-
-	const {frequency, breakdownData, amount, allocation} = channelData;
+	const { frequency, breakdownData, amount, allocation } = channelData;
 
 	const dispatch = useDispatch();
 
 	const changeBudgetFrequency = (e) => {
-
-		if (e.target.innerText === frequency) {return;}
+		if (e.target.innerText === frequency) {
+			return;
+		}
 
 		const dataToUpdate = {
 			...channelData,
-			...updateDataWithFrequencyChanging(
-				frequency,
-				e.target.innerText,
-				breakdownData,
-				amount
-			)
+			...updateDataWithFrequencyChanging(frequency, e.target.innerText, breakdownData, amount)
 		};
 		dispatch(updateChannelsData(dataToUpdate));
 	};
 
 	const annualBudgetAmountChange = (e) => {
-
-		if(!e.target.value) {return;}
+		if (!e.target.value) {
+			return;
+		}
 
 		const parsedValue = parseFloat(e.target.value.replace(/,/g, ''));
 
@@ -50,8 +46,9 @@ export const Budget = ({ channelData }) => {
 	};
 
 	const changeAllocationType = (e) => {
-
-		if(e.target.innerText === allocation) {return;}
+		if (e.target.innerText === allocation) {
+			return;
+		}
 
 		const dataToUpdate = {
 			...channelData,
@@ -66,7 +63,9 @@ export const Budget = ({ channelData }) => {
 	const changeBreakdownItemValue = (e) => {
 		const { value, name } = e.target;
 
-		if (!value.length) {return;}
+		if (!value.length) {
+			return;
+		}
 
 		const updatedBreakdownData = updateBreakdownData(
 			breakdownData,

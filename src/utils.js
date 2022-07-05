@@ -6,7 +6,8 @@ import {
 } from 'constants';
 import { v4 } from 'uuid';
 
-export const getBreakDownInitialData = (breakdownArray) => breakdownArray.map(item => ({name: item, value: 0}));
+export const getBreakDownInitialData = (breakdownArray) =>
+	breakdownArray.map((item) => ({ name: item, value: 0 }));
 
 export const getInitialChannelData = () => ({
 	id: v4(),
@@ -27,7 +28,7 @@ export const recalculateBreakdownData = (array, amount) =>
 	}));
 
 export const updateBreakdownData = (array, itemName, value) =>
-	array.map(item => item.name === itemName ? {...item, value} : item);
+	array.map((item) => (item.name === itemName ? { ...item, value } : item));
 
 export const updateDataWithFrequencyChanging = (
 	prevFrequencyType,
@@ -35,8 +36,7 @@ export const updateDataWithFrequencyChanging = (
 	currentBreakdownData,
 	amount
 ) => {
-
-	if(newFrequencyType === 'Annually') {
+	if (newFrequencyType === 'Annually') {
 		return {
 			breakdownData: recalculateBreakdownData(currentBreakdownData, amount),
 			frequency: newFrequencyType,
@@ -44,7 +44,7 @@ export const updateDataWithFrequencyChanging = (
 		};
 	}
 
-	if(newFrequencyType === 'Quarterly') {
+	if (newFrequencyType === 'Quarterly') {
 		return {
 			breakdownData: recalculateBreakdownData(getBreakDownInitialData(BREAKDOWN_QUARTERS), amount),
 			frequency: newFrequencyType,
@@ -52,14 +52,14 @@ export const updateDataWithFrequencyChanging = (
 		};
 	}
 
-	if(newFrequencyType === 'Monthly' && prevFrequencyType === 'Annually') {
+	if (newFrequencyType === 'Monthly' && prevFrequencyType === 'Annually') {
 		return {
 			frequency: newFrequencyType,
 			allocation: 'Manual'
 		};
 	}
 
-	if(newFrequencyType === 'Monthly' && prevFrequencyType === 'Quarterly') {
+	if (newFrequencyType === 'Monthly' && prevFrequencyType === 'Quarterly') {
 		return {
 			breakdownData: recalculateBreakdownData(getBreakDownInitialData(BREAKDOWN_MONTHS), amount),
 			frequency: newFrequencyType,

@@ -11,7 +11,7 @@ export const ScrollableLayout = ({ children }) => {
 	const contentRef = useRef(null);
 
 	useEffect(() => {
-		setIsScrollHidden((contentRef?.current?.clientWidth - wrapperRef?.current?.offsetWidth) > 0);
+		setIsScrollHidden(contentRef?.current?.clientWidth - wrapperRef?.current?.offsetWidth > 0);
 	}, []);
 
 	const onScroll = () => {
@@ -28,13 +28,13 @@ export const ScrollableLayout = ({ children }) => {
 			<Content scrollGap={scrollGap} ref={contentRef}>
 				{children}
 			</Content>
-			{isScrollHidden && <ActionsBlock onClick={onScroll}>
-				<HorizontalScrollIcon className={
-					scrollGap
-						? 'scroll-icon-to-right'
-						: 'scroll-icon-to-left'
-				}/>
-			</ActionsBlock>}
+			{isScrollHidden && (
+				<ActionsBlock onClick={onScroll}>
+					<HorizontalScrollIcon
+						className={scrollGap ? 'scroll-icon-to-right' : 'scroll-icon-to-left'}
+					/>
+				</ActionsBlock>
+			)}
 		</Wrapper>
 	);
 };

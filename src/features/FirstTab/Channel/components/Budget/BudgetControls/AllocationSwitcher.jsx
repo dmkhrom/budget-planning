@@ -12,7 +12,8 @@ export const AllocationSwitcher = ({ handleSwitch, allocationType }) => (
 			<AllocationSwitcherOption
 				key={item}
 				className={allocationType === item ? 'active-item' : ''}
-				onClick={handleSwitch}>
+				onClick={handleSwitch}
+			>
 				{item}
 			</AllocationSwitcherOption>
 		))}

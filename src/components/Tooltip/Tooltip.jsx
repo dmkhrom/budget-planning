@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { TooltipInfo } from 'components/Tooltip/styles';
 
 export const Tooltip = ({ tooltipDescription, ...props }) => (
-	<TooltipInfo {...props} >{tooltipDescription}</TooltipInfo>
+	<TooltipInfo {...props}>{tooltipDescription}</TooltipInfo>
 );
 
 Tooltip.propTypes = {

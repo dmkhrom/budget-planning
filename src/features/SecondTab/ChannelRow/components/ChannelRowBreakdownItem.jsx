@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
-import {ReactComponent as CancelIcon} from 'assets/icons/cancel_icon.svg';
-import {ReactComponent as EditIcon} from 'assets/icons/edit_icon.svg';
-import {ReactComponent as SaveIcon} from 'assets/icons/save_icon.svg';
+import { ReactComponent as CancelIcon } from 'assets/icons/cancel_icon.svg';
+import { ReactComponent as EditIcon } from 'assets/icons/edit_icon.svg';
+import { ReactComponent as SaveIcon } from 'assets/icons/save_icon.svg';
 import { Tooltip } from 'components';
 import { BreakDownItemValue } from 'features/SecondTab/ChannelRow/components';
 import {
@@ -84,7 +84,7 @@ export const ChannelRowBreakdownItem = ({
 				)}
 				{!isEdit && showEditIcon && (
 					<EditIcon
-						className='edit-icon'
+						className="edit-icon"
 						onClick={() => (isManualType ? changeEditItem() : {})}
 						onMouseEnter={() => !isManualType && setShowTooltip(true)}
 						onMouseLeave={() => {

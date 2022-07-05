@@ -13,19 +13,19 @@ export const ChannelInfo = ({
 	changeChannelName
 }) => (
 	<ChannelInfoWrapper>
-		<ArrowDown className='chevron-icon' />
+		<ArrowDown className="chevron-icon" />
 		<ChannelNameWrapper>
-			<ChannelLogo className='channel-logo'/>
-			{isEdit
-			 ? (
-					<DefaultInput
-						onBlur={onCloseNameEdit}
-						inputRef={inputRef}
-						onChange={changeChannelName}
-						value={channelName}
-					/>
-				)
-			 : (channelName)}
+			<ChannelLogo className="channel-logo" />
+			{isEdit ? (
+				<DefaultInput
+					onBlur={onCloseNameEdit}
+					inputRef={inputRef}
+					onChange={changeChannelName}
+					value={channelName}
+				/>
+			) : (
+				channelName
+			)}
 		</ChannelNameWrapper>
 	</ChannelInfoWrapper>
 );

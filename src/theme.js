@@ -6,7 +6,7 @@ const palette = {
 		600: '#2F3B66',
 		500: '#707EA7',
 		400: '#99A4C2',
-		300: '#97A4C8',
+		300: '#97A4C8'
 	},
 	red: {
 		500: '#EE2032',
@@ -33,7 +33,7 @@ const theme = {
 	},
 	colors: {
 		...palette
-	},
+	}
 };
 
 export { theme };

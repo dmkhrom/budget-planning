@@ -8,17 +8,16 @@ import { useFocus } from 'hooks/useFocus';
 import { deleteChannel, updateChannelsData } from 'redux/channelsSlice';
 
 export const Channel = ({ isActive, channelData, setActiveChannelId }) => {
-
 	const dispatch = useDispatch();
 
-	const [ isEditChannelName, setIsEditChannelName ] = useState(false);
-	const [ inputRef, setInputFocus ] = useFocus();
+	const [isEditChannelName, setIsEditChannelName] = useState(false);
+	const [inputRef, setInputFocus] = useFocus();
 
 	const { id, name } = channelData;
 
 	useEffect(() => {
 		setInputFocus();
-	}, [ isEditChannelName ]);
+	}, [isEditChannelName]);
 
 	const changeChannelName = (e) => {
 		const dataToUpdate = {
@@ -59,7 +58,7 @@ export const Channel = ({ isActive, channelData, setActiveChannelId }) => {
 			</ChannelItem>
 			{isActive && (
 				<ChannelCollapse>
-					<Budget channelData={channelData}/>
+					<Budget channelData={channelData} />
 				</ChannelCollapse>
 			)}
 		</ChannelWrapper>

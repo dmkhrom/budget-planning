@@ -1,6 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { BudgetFrequencyControl, BudgetBaselineControl, BudgetAllocationControl } from 'features/FirstTab/Channel/components/Budget/BudgetControls';
+import {
+	BudgetFrequencyControl,
+	BudgetBaselineControl,
+	BudgetAllocationControl
+} from 'features/FirstTab/Channel/components/Budget/BudgetControls';
 import { BudgetControlsWrapper } from 'features/FirstTab/Channel/styles';
 
 export const BudgetControls = ({

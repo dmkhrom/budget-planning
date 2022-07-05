@@ -6,7 +6,6 @@ import { ItemValue } from 'features/SecondTab/ChannelRow/styles';
 const MAX_VISIBLE_SYMBOLS = 9;
 
 export const BreakDownItemValue = ({ value }) => {
-
 	const [showTooltip, setShowTooltip] = useState(false);
 
 	return (
@@ -15,11 +14,7 @@ export const BreakDownItemValue = ({ value }) => {
 			onMouseLeave={() => setShowTooltip(false)}
 		>
 			{value}
-			<Tooltip
-				positionX='left'
-				isShow={showTooltip}
-				tooltipDescription={value}
-			/>
+			<Tooltip positionX="left" isShow={showTooltip} tooltipDescription={value} />
 		</ItemValue>
 	);
 };

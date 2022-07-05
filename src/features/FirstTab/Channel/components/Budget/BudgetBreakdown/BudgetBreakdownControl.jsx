@@ -16,8 +16,8 @@ export const BudgetBreakdownControl = ({
 	<BudgetBreakdownWrapper>
 		<BreakdownTitle>Budget Breakdown</BreakdownTitle>
 		<BreakdownSubtitle>
-      By default, your budget will be equally divided throughout the year. You can manually change
-      the budget allocation, either now or later.
+			By default, your budget will be equally divided throughout the year. You can manually change
+			the budget allocation, either now or later.
 		</BreakdownSubtitle>
 		<BudgetBreakdownDataWrapper>
 			{breakdownData.map((item) => (
