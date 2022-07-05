@@ -3,6 +3,6 @@ import channelsSliceReducer from 'redux/channelsSlice';
 
 export default configureStore({
 	reducer: {
-		channelsData: channelsSliceReducer
+		channels: channelsSliceReducer
 	}
 });

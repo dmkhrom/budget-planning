@@ -11,5 +11,6 @@ export const AddButton = ({ name, ...props }) => (
 );
 
 AddButton.propTypes = {
+	onClick: PropTypes.func,
 	name: PropTypes.string
 };

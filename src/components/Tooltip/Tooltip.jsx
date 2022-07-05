@@ -7,5 +7,7 @@ export const Tooltip = ({ tooltipDescription, ...props }) => (
 );
 
 Tooltip.propTypes = {
+	positionX: PropTypes.string,
+	isShow: PropTypes.bool,
 	tooltipDescription: PropTypes.string
 };

@@ -9,7 +9,7 @@ import {
 	DropdownWrapper
 } from 'components/DropDown/styles';
 
-export const DropDown = ({ handleSelect, selectedItem }) => {
+export const DropDown = ({ onSelect, selectedItem }) => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	return (
@@ -21,7 +21,7 @@ export const DropDown = ({ handleSelect, selectedItem }) => {
 			{isOpen && (
 				<DropdownList isOpen={isOpen}>
 					{BUDGET_FREQUENCY_ITEMS.map((item) => (
-						<DropdownItem key={item} name={item} value={item} onClick={handleSelect}>
+						<DropdownItem key={item} onClick={onSelect}>
 							{item}
 						</DropdownItem>
 					))}
@@ -32,6 +32,6 @@ export const DropDown = ({ handleSelect, selectedItem }) => {
 };
 
 DropDown.propTypes = {
-	handleSelect: PropTypes.func,
+	onSelect: PropTypes.func,
 	selectedItem: PropTypes.string
 };

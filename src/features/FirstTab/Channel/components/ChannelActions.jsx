@@ -13,22 +13,21 @@ export const ChannelActions = ({ id, editChannelName, removeChannel }) => {
 		return () => document.removeEventListener('click', hideShowActions);
 	}, []);
 
-	const handleOpen = () => {
+	const handleOpen = (e) => {
+		e.stopPropagation();
 		setShowActions(!showActions);
 	};
 
 	const handleEdit = () => {
 		editChannelName(true);
-		setShowActions(false);
 	};
 	const handleRemove = () => {
 		removeChannel(id);
-		setShowActions(false);
 	};
 
 	return (
-		<ChannelActionsWrapper onClick={(e) => e.stopPropagation()}>
-			<ChannelActionsIcon className="actions-icon" onClick={handleOpen} />
+		<ChannelActionsWrapper onClick={handleOpen}>
+			<ChannelActionsIcon className="actions-icon" />
 			{showActions && (
 				<ActionsMenu>
 					<ActionsItem onClick={handleEdit}> Edit </ActionsItem>

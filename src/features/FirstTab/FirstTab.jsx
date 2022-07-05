@@ -4,7 +4,7 @@ import { Channel } from 'features/FirstTab/Channel';
 
 export const FirstTab = () => {
 	const [activeChannelId, setActiveChannelId] = useState(null);
-	const { channels } = useSelector((state) => state.channelsData);
+	const { channels } = useSelector((state) => state);
 
 	return channels.map((channel) => (
 		<Channel

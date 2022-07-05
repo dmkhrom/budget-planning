@@ -9,7 +9,7 @@ export const BudgetFrequencyControl = ({ selectBudgetFrequency, budgetFrequency 
 			label="Budget Frequency"
 			tooltipDescription="Setup your budget Annually, Monthly or Quarterly"
 		/>
-		<DropDown handleSelect={selectBudgetFrequency} selectedItem={budgetFrequency} />
+		<DropDown onSelect={selectBudgetFrequency} selectedItem={budgetFrequency} />
 	</BudgetFrequencyControlWrapper>
 );
 
