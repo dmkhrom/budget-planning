@@ -15,7 +15,7 @@ export const ChannelItem = styled.div`
 	width: 100%;
 	height: 52px;
 	margin: 0 auto;
-	background: ${({ theme }) => theme.colors.grey[500]};
+	background: ${({ theme }) => theme.palette.grey[500]};
 	border: 1px solid rgba(178, 187, 213, 0.5);
 	border-radius: ${({ isActive }) => (isActive ? '4px 4px 0 0' : '4px')};
 	padding: 0 15px 0 16px;
@@ -40,7 +40,7 @@ export const ChannelNameWrapper = styled.div`
 	font-weight: 500;
 	font-size: ${({ theme }) => theme.fontSizes.regular};
 	line-height: 21px;
-	color: ${({ theme }) => theme.colors.blue[800]};
+	color: ${({ theme }) => theme.palette.blue[800]};
 	margin-left: 30px;
 `;
 
@@ -66,7 +66,7 @@ export const ActionsMenu = styled.div`
 	font-weight: 500;
 	font-size: ${({ theme }) => theme.fontSizes.regular};
 	line-height: 21px;
-	background: ${({ theme }) => theme.colors.white};
+	background: ${({ theme }) => theme.palette.white};
 	border: 1px solid rgba(178, 187, 213, 0.5);
 	box-shadow: 0 4px 16px rgba(24, 32, 51, 0.12);
 	border-radius: 4px;
@@ -78,12 +78,12 @@ export const ActionsItem = styled.div`
 	font-weight: 500;
 	font-size: ${({ theme }) => theme.fontSizes.regular};
 	line-height: 21px;
-	color: ${({ theme }) => theme.colors.blue[800]};
+	color: ${({ theme }) => theme.palette.blue[800]};
 	box-sizing: border-box;
 	padding: 10px;
 	&:hover {
-		color: ${({ theme }) => theme.colors.red[500]};
-		background: ${({ theme }) => theme.colors.red[200]};
+		color: ${({ theme }) => theme.palette.red[500]};
+		background: ${({ theme }) => theme.palette.red[200]};
 		border-radius: 4px;
 	}
 `;
@@ -124,9 +124,9 @@ export const BudgetAllocationControlWrapper = styled(BudgetCommonWrapper)`
 
 export const AllocationSwitcherWrapper = styled.div`
 	display: flex;
-	background: ${({ theme }) => theme.colors.grey[400]};
+	background: ${({ theme }) => theme.palette.grey[400]};
 	border: 1px solid rgba(178, 187, 213, 0.5);
-	box-shadow: 0 1px 2px ${({ theme }) => theme.colors.grey[600]};
+	box-shadow: 0 1px 2px ${({ theme }) => theme.palette.grey[600]};
 	border-radius: 4px;
 	overflow: hidden;
 	box-sizing: border-box;
@@ -145,25 +145,25 @@ export const AllocationSwitcherOption = styled.div`
 	line-height: 18px;
 	/* identical to box height, or 150% */
 	text-align: center;
-	color: ${({ theme }) => theme.colors.blue[700]};
+	color: ${({ theme }) => theme.palette.blue[700]};
 	&.active-item {
 		background: linear-gradient(
 			360deg,
-			${({ theme }) => theme.colors.grey[300]} 0%,
-			${({ theme }) => theme.colors.white} 100%
+			${({ theme }) => theme.palette.grey[300]} 0%,
+			${({ theme }) => theme.palette.white} 100%
 		);
 		border: 1px solid rgba(178, 187, 213, 0.5);
 		border-radius: 4px;
 	}
 	&:hover {
-		background: ${({ theme }) => theme.colors.grey[500]};
+		background: ${({ theme }) => theme.palette.grey[500]};
 	}
 `;
 
 export const BudgetBreakdownWrapper = styled.div`
 	width: 100%;
 	margin-top: 46px;
-	background: ${({ theme }) => theme.colors.grey[400]};
+	background: ${({ theme }) => theme.palette.grey[400]};
 	border: 1px solid rgba(178, 187, 213, 0.5);
 	border-radius: 4px;
 	padding: 24px;
@@ -176,7 +176,7 @@ export const BreakdownTitle = styled.div`
 	font-weight: 800;
 	font-size: ${({ theme }) => theme.fontSizes.increased};
 	line-height: 24px;
-	color: ${({ theme }) => theme.colors.blue[900]};
+	color: ${({ theme }) => theme.palette.blue[900]};
 `;
 
 export const BreakdownSubtitle = styled.div`
@@ -184,7 +184,7 @@ export const BreakdownSubtitle = styled.div`
 	font-weight: 400;
 	font-size: ${({ theme }) => theme.fontSizes.regular};
 	line-height: 21px;
-	color: ${({ theme }) => theme.colors.blue[400]};
+	color: ${({ theme }) => theme.palette.blue[400]};
 `;
 
 export const BudgetBreakdownDataWrapper = styled.div`
@@ -210,7 +210,7 @@ export const InputWrapper = styled.span`
 		content: '$';
 		font-size: ${({ theme }) => theme.fontSizes.regular};
 		line-height: 21px;
-		color: ${({ theme }) => theme.colors.blue[700]};
+		color: ${({ theme }) => theme.palette.blue[700]};
 		z-index: 1;
 	}
 `;
@@ -218,9 +218,9 @@ export const InputWrapper = styled.span`
 export const AmountInput = styled(CustomNumericInput)`
 	background: linear-gradient(
 		360deg,
-		${({ theme }) => theme.colors.grey[300]} 0%,
-		${({ theme }) => theme.colors.white} 100%
+		${({ theme }) => theme.palette.grey[300]} 0%,
+		${({ theme }) => theme.palette.white} 100%
 	);
-	box-shadow: 0 1px 2px ${({ theme }) => theme.colors.grey[600]};
+	box-shadow: 0 1px 2px ${({ theme }) => theme.palette.grey[600]};
 	padding-left: 28px;
 `;

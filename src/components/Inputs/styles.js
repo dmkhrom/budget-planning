@@ -6,12 +6,12 @@ export const CustomInput = styled.input`
 	height: 40px;
 	background: linear-gradient(
 		360deg,
-		${({ theme }) => theme.colors.grey[300]} 0%,
-		${({ theme }) => theme.colors.white} 100%
+		${({ theme }) => theme.palette.grey[300]} 0%,
+		${({ theme }) => theme.palette.white} 100%
 	);
 	border: 1px solid rgba(178, 187, 213, 0.5);
 	box-sizing: border-box;
-	box-shadow: 0 1px 2px ${({ theme }) => theme.colors.grey[600]};
+	box-shadow: 0 1px 2px ${({ theme }) => theme.palette.grey[600]};
 	border-radius: 3px;
 	padding-left: 8px;
 	&:focus {
@@ -22,7 +22,7 @@ export const CustomInput = styled.input`
 export const CustomNumericInput = styled(NumberFormat)`
 	width: ${({ width }) => width || '100%'};
 	height: 40px;
-	background: ${({ theme }) => theme.colors.white};
+	background: ${({ theme }) => theme.palette.white};
 	border: 1px solid rgba(178, 187, 213, 0.5);
 	box-sizing: border-box;
 	border-radius: 3px;
@@ -30,5 +30,5 @@ export const CustomNumericInput = styled(NumberFormat)`
 	font-weight: 500;
 	font-size: ${({ theme }) => theme.fontSizes.regular};
 	line-height: 21px;
-	color: ${({ theme, disabled }) => (disabled ? theme.colors.blue[400] : theme.colors.blue[700])};
+	color: ${({ theme, disabled }) => (disabled ? theme.palette.blue[400] : theme.palette.blue[700])};
 `;

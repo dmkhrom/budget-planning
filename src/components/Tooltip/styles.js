@@ -21,8 +21,8 @@ export const TooltipInfo = styled.div`
 	font-size: ${({ theme }) => theme.fontSizes.small};
 	background: linear-gradient(
 		360deg,
-		${({ theme }) => theme.colors.grey[300]} 0%,
-		${({ theme }) => theme.colors.white} 100%
+		${({ theme }) => theme.palette.grey[300]} 0%,
+		${({ theme }) => theme.palette.white} 100%
 	);
 	border: 1px solid rgba(178, 187, 213, 0.2);
 	cursor: pointer;

@@ -12,7 +12,7 @@ export const Title = styled.h1`
 	line-height: 33px;
 	margin-bottom: 16px;
 	letter-spacing: -0.2px;
-	color: ${({ theme }) => theme.colors.blue[900]};
+	color: ${({ theme }) => theme.palette.blue[900]};
 `;
 
 export const SetupChannelWrapper = styled.div`
@@ -27,7 +27,7 @@ export const SetupChannelSubTitle = styled.div`
 	font-weight: 600;
 	font-size: ${({ theme }) => theme.fontSizes.increased};
 	line-height: 25px;
-	color: ${({ theme }) => theme.colors.blue[900]};
+	color: ${({ theme }) => theme.palette.blue[900]};
 `;
 
 export const SetupChannelDescription = styled.div`
@@ -35,5 +35,5 @@ export const SetupChannelDescription = styled.div`
 	font-weight: 400;
 	font-size: ${({ theme }) => theme.fontSizes.regular};
 	line-height: 21px;
-	color: ${({ theme }) => theme.colors.blue[400]};
+	color: ${({ theme }) => theme.palette.blue[400]};
 `;

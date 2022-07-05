@@ -38,7 +38,7 @@ export const ChannelLabel = styled.div`
 	font-size: ${({ theme }) => theme.fontSizes.tiny};
 	line-height: 16px;
 	text-transform: uppercase;
-	color: ${({ theme }) => theme.colors.blue[400]};
+	color: ${({ theme }) => theme.palette.blue[400]};
 `;
 
 export const ChannelInfoBlock = styled.div`
@@ -52,7 +52,7 @@ export const ChannelName = styled.div`
 	font-weight: 500;
 	font-size: ${({ theme }) => theme.fontSizes.regular};
 	line-height: 21px;
-	color: ${({ theme }) => theme.colors.blue[800]};
+	color: ${({ theme }) => theme.palette.blue[800]};
 	margin-left: 16px;
 	text-overflow: ellipsis;
 	overflow: hidden;
@@ -84,7 +84,7 @@ export const BreakdownValueWrapper = styled.div`
 	font-weight: 500;
 	font-size: ${({ theme }) => theme.fontSizes.regular};
 	line-height: 20px;
-	color: ${({ theme }) => theme.colors.blue[800]};
+	color: ${({ theme }) => theme.palette.blue[800]};
 
 	& .edit-icon {
 		visibility: hidden;
@@ -116,10 +116,10 @@ export const BreakdownInputWrapper = styled.div`
 export const BreakdownInput = styled(CustomNumericInput)`
 	background: linear-gradient(
 		360deg,
-		${({ theme }) => theme.colors.grey[300]} 0%,
-		${({ theme }) => theme.colors.white} 100%
+		${({ theme }) => theme.palette.grey[300]} 0%,
+		${({ theme }) => theme.palette.white} 100%
 	);
-	box-shadow: 0 1px 2px ${({ theme }) => theme.colors.grey[600]};
+	box-shadow: 0 1px 2px ${({ theme }) => theme.palette.grey[600]};
 	min-width: 80px;
 	height: 32px;
 	margin-right: 4px;
@@ -129,6 +129,6 @@ export const BreakdownItemLabel = styled.div`
 	font-size: ${({ theme }) => theme.fontSizes.tiny};
 	font-weight: 700;
 	line-height: 16px;
-	color: ${({ theme }) => theme.colors.blue[300]};
+	color: ${({ theme }) => theme.palette.blue[300]};
 	margin-bottom: 8px;
 `;

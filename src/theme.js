@@ -25,7 +25,7 @@ const palette = {
 	white: '#ffffff'
 };
 
-const sizes = {
+const fontSizes = {
 	tiny: '11px',
 	small: '12px',
 	regular: '14px',
@@ -36,12 +36,8 @@ const sizes = {
 };
 
 const theme = {
-	fontSizes: {
-		...sizes
-	},
-	colors: {
-		...palette
-	}
+	fontSizes,
+	palette
 };
 
 export { theme };
