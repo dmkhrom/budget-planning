@@ -87,7 +87,7 @@ export const ChannelRowBreakdownItem = ({
 				>
 					<EditIcon
 						className={`edit-icon ${!isEdit && showEditIcon && 'visible'}`}
-						onClick={() => setIsEdit(true)}
+						onClick={() => isManualType && setIsEdit(true)}
 					/>
 				</Tooltip>
 			</BreakdownValueWrapper>
