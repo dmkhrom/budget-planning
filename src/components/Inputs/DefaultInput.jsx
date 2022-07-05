@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { CustomInput } from 'components/Inputs/styles';
 
@@ -7,6 +7,6 @@ export const DefaultInput = ({ inputRef, ...props }) => <CustomInput ref={inputR
 DefaultInput.propTypes = {
 	inputRef: PropTypes.oneOfType([
 		PropTypes.func,
-		PropTypes.shape({ current: PropTypes.instanceOf(Component) })
+		PropTypes.shape({ current: PropTypes.instanceOf(HTMLInputElement) })
 	])
 };
