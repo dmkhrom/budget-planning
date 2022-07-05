@@ -5,7 +5,5 @@ import { ChannelRow } from 'features/SecondTab/ChannelRow';
 export const SecondTab = () => {
 	const { channels } = useSelector((state) => state);
 
-	return channels.map((channel) => (
-		<ChannelRow key={channel.id} channelData={channel} />
-	));
+	return channels.map((channel) => <ChannelRow key={channel.id} channelData={channel} />);
 };

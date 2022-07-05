@@ -8,11 +8,8 @@ export const LabelWithTooltip = ({ label, tooltipDescription }) => {
 	return (
 		<LabelWithTooltipWrapper>
 			{label}
-			<Tooltip
-				positionX="right"
-				tooltipDescription={tooltipDescription}
-			>
-				<InfoIcon className="info-icon"/>
+			<Tooltip positionX="right" tooltipDescription={tooltipDescription}>
+				<InfoIcon className="info-icon" />
 			</Tooltip>
 		</LabelWithTooltipWrapper>
 	);

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { TooltipContainer, TooltipInfo } from 'components/Tooltip/styles';
 
 export const Tooltip = ({ tooltipDescription, children, disabled, ...props }) => {
-
 	const [showTooltip, setShowTooltip] = useState(false);
 
 	return (
@@ -12,9 +11,12 @@ export const Tooltip = ({ tooltipDescription, children, disabled, ...props }) =>
 			onMouseLeave={() => setShowTooltip(false)}
 		>
 			{children}
-			<TooltipInfo show={showTooltip} {...props}>{tooltipDescription}</TooltipInfo>
+			<TooltipInfo show={showTooltip} {...props}>
+				{tooltipDescription}
+			</TooltipInfo>
 		</TooltipContainer>
-	);};
+	);
+};
 
 Tooltip.propTypes = {
 	disabled: PropTypes.bool,

@@ -19,7 +19,6 @@ const palette = {
 		500: '#f6f7fb',
 		400: '#f5f6fa',
 		300: '#fafafc'
-
 	},
 	black: '#000000',
 	shadow: '#e6e8f0',
