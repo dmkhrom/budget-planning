@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { ItemLabel } from 'components';
 import {
 	AmountInput,
@@ -28,3 +29,10 @@ export const BudgetBreakdownItem = ({
 		</InputWrapper>
 	</BudgetBreakdownItemWrapper>
 );
+
+BudgetBreakdownItem.propTypes = {
+	disabled: PropTypes.bool,
+	handleChangeBreakdownItemValue: PropTypes.func,
+	itemLabel: PropTypes.string,
+	itemValue: PropTypes.number
+};

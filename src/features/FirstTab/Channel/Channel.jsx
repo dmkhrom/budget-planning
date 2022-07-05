@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { ChannelInfo, ChannelActions } from 'features/FirstTab/Channel/components';
 import { Budget } from 'features/FirstTab/Channel/components/Budget';
@@ -63,4 +64,22 @@ export const Channel = ({ isActive, channelData, setActiveChannelId }) => {
 			)}
 		</ChannelWrapper>
 	);
+};
+
+Channel.propTypes = {
+	isActive: PropTypes.bool,
+	channelData: PropTypes.shape({
+		id: PropTypes.string,
+		name: PropTypes.string,
+		allocation: PropTypes.string,
+		frequency: PropTypes.string,
+		breakdownData: PropTypes.arrayOf(
+			PropTypes.shape({
+				name: PropTypes.string,
+				value: PropTypes.number
+			})
+		),
+		amount: PropTypes.number
+	}),
+	setActiveChannelId: PropTypes.func
 };

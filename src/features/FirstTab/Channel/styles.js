@@ -17,12 +17,12 @@ export const ChannelItem = styled.div`
   margin: 0 auto;
   background: #f6f7fb;
   border: 1px solid rgba(178, 187, 213, 0.5);
-  border-radius: ${(props) => (props.isActive ? '4px 4px 0 0' : '4px')};
+  border-radius: ${({ isActive }) => (isActive ? '4px 4px 0 0' : '4px')};
   padding: 0 15px 0 16px;
   cursor: pointer;
   box-sizing: border-box;
   & .chevron-icon {
-    transform: rotate(${(props) => (props.isActive ? '180deg' : '0')});
+    transform: rotate(${({ isActive }) => (isActive ? '180deg' : '0')});
   }
   & .channel-logo {
     margin-right: 12px;

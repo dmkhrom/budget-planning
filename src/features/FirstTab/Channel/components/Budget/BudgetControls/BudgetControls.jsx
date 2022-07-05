@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { BudgetFrequencyControl, BudgetBaselineControl, BudgetAllocationControl } from 'features/FirstTab/Channel/components/Budget/BudgetControls';
 import { BudgetControlsWrapper } from 'features/FirstTab/Channel/styles';
 
@@ -27,3 +28,13 @@ export const BudgetControls = ({
 		/>
 	</BudgetControlsWrapper>
 );
+
+BudgetControls.propTypes = {
+	allocationType: PropTypes.string,
+	annualAmount: PropTypes.number,
+	budgetFrequency: PropTypes.string,
+	changeAllocationType: PropTypes.func,
+	disabledBaselineControl: PropTypes.bool,
+	handleAmountChange: PropTypes.func,
+	selectBudgetFrequency: PropTypes.func
+};

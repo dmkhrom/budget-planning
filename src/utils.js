@@ -35,31 +35,35 @@ export const updateDataWithFrequencyChanging = (
 	currentBreakdownData,
 	amount
 ) => {
-	switch (true) {
-	case newFrequencyType === 'Annually':
+
+	if(newFrequencyType === 'Annually') {
 		return {
 			breakdownData: recalculateBreakdownData(currentBreakdownData, amount),
 			frequency: newFrequencyType,
 			allocation: 'Equal'
 		};
-	case newFrequencyType === 'Quarterly':
+	}
+
+	if(newFrequencyType === 'Quarterly') {
 		return {
 			breakdownData: recalculateBreakdownData(getBreakDownInitialData(BREAKDOWN_QUARTERS), amount),
 			frequency: newFrequencyType,
 			allocation: 'Manual'
 		};
-	case newFrequencyType === 'Monthly' && prevFrequencyType === 'Annually':
+	}
+
+	if(newFrequencyType === 'Monthly' && prevFrequencyType === 'Annually') {
 		return {
 			frequency: newFrequencyType,
 			allocation: 'Manual'
 		};
-	case newFrequencyType === 'Monthly' && prevFrequencyType === 'Quarterly':
+	}
+
+	if(newFrequencyType === 'Monthly' && prevFrequencyType === 'Quarterly') {
 		return {
 			breakdownData: recalculateBreakdownData(getBreakDownInitialData(BREAKDOWN_MONTHS), amount),
 			frequency: newFrequencyType,
 			allocation: 'Manual'
 		};
-	default:
-		return null;
 	}
 };

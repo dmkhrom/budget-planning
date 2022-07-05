@@ -1,5 +1,6 @@
 import { ALLOCATION_ITEMS } from 'constants';
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
 	AllocationSwitcherOption,
 	AllocationSwitcherWrapper
@@ -17,3 +18,8 @@ export const AllocationSwitcher = ({ handleSwitch, allocationType }) => (
 		))}
 	</AllocationSwitcherWrapper>
 );
+
+AllocationSwitcher.propTypes = {
+	allocationType: PropTypes.string,
+	handleSwitch: PropTypes.func
+};

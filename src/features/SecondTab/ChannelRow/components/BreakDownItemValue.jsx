@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { Tooltip } from 'components';
 import { ItemValue } from 'features/SecondTab/ChannelRow/styles';
 
@@ -21,4 +22,8 @@ export const BreakDownItemValue = ({ value }) => {
 			/>
 		</ItemValue>
 	);
+};
+
+BreakDownItemValue.propTypes = {
+	value: PropTypes.string
 };
