@@ -30,11 +30,11 @@ export const DropdownItem = styled.div`
   display: flex;
   width: 100%;
   font-weight: 500;
-  font-size: 14px;
+  font-size: ${({theme}) => theme.fontSizes.regular};
   line-height: 18px;
   position: relative;
   background: #ffffff;
-  color: #2a3558;
+  color: ${({theme}) => theme.colors.blue[700]};
   justify-content: space-between;
   padding: 10px 14px;
   align-items: center;

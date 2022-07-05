@@ -20,7 +20,7 @@ export const ChannelInfo = ({
 					<DefaultInput
 						onBlur={onCloseNameEdit}
 						inputRef={inputRef}
-						handleChange={changeChannelName}
+						onChange={changeChannelName}
 						value={channelName}
 					/>
 				) :

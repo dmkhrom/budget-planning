@@ -5,9 +5,9 @@ export const LabelWithTooltipWrapper = styled.div`
   width: fit-content;
   position: relative;
   font-weight: 400;
-  font-size: 14px;
+  font-size: ${({theme}) => theme.fontSizes.regular};
   line-height: 21px;
-  color: #2f3b66;
+  color: ${({theme}) => theme.colors.blue[600]};
   margin-bottom: 8px;
   & .info-icon {
     cursor: pointer;

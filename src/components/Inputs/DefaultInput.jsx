@@ -1,9 +1,8 @@
 import React from 'react';
 import { CustomInput } from 'components/Inputs/styles';
 
-export const DefaultInput = ({ inputRef, handleChange, ...props }) => (
+export const DefaultInput = ({ inputRef, ...props }) => (
 	<CustomInput
-		onChange={handleChange}
 		ref={inputRef}
 		{...props}
 	/>

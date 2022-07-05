@@ -1,0 +1,39 @@
+const palette = {
+	blue: {
+		900: '#182033',
+		800: '#222A41',
+		700: '#2A3558',
+		600: '#2F3B66',
+		500: '#707EA7',
+		400: '#99A4C2',
+		300: '#97A4C8',
+	},
+	red: {
+		500: '#EE2032',
+		200: '#FDE8EA'
+	},
+	black: '#000000',
+	grey: '#7E7E7E',
+	background: '#f5f6fa'
+};
+
+const sizes = {
+	tiny: '11px',
+	small: '12px',
+	regular: '14px',
+	increased: '16px',
+	large: '18px',
+	huge: '20px',
+	giant: '24px'
+};
+
+const theme = {
+	fontSizes: {
+		...sizes
+	},
+	colors: {
+		...palette
+	},
+};
+
+export { theme };

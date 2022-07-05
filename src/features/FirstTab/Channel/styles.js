@@ -38,15 +38,18 @@ export const ChannelNameWrapper = styled.div`
   display: flex;
   align-items: center;
   font-weight: 500;
-  font-size: 14px;
+  font-size: ${({theme}) => theme.fontSizes.regular};
   line-height: 21px;
-  color: #222a41;
+  color: ${({theme}) => theme.colors.blue[800]};
   margin-left: 30px;
 `;
 
 export const ChannelActionsWrapper = styled.div`
   display: flex;
   align-items: center;
+  & .actions-icon {
+    height: 100%;
+  }
 `;
 
 export const ActionsMenu = styled.div`
@@ -61,7 +64,7 @@ export const ActionsMenu = styled.div`
   top: 40px;
   z-index: 100;
   font-weight: 500;
-  font-size: 14px;
+  font-size: ${({theme}) => theme.fontSizes.regular};
   line-height: 21px;
   background: #ffffff;
   border: 1px solid rgba(178, 187, 213, 0.5);
@@ -73,14 +76,14 @@ export const ActionsItem = styled.div`
   width: 146px;
   height: 40px;
   font-weight: 500;
-  font-size: 14px;
+  font-size: ${({theme}) => theme.fontSizes.regular};
   line-height: 21px;
-  color: #222a41;
+  color: ${({theme}) => theme.colors.blue[800]};
   box-sizing: border-box;
   padding: 10px;
   &:hover {
-    color: #ee2032;
-    background: #fde8ea;
+    color: ${({theme}) => theme.colors.red[500]};
+    background: ${({theme}) => theme.colors.red[200]};
     border-radius: 4px;
   }
 `;
@@ -121,11 +124,12 @@ export const BudgetAllocationControlWrapper = styled(BudgetCommonWrapper)`
 
 export const AllocationSwitcherWrapper = styled.div`
   display: flex;
-  background: #f5f6fa;
+  background: ${({theme}) => theme.colors.background};
   border: 1px solid rgba(178, 187, 213, 0.5);
   box-shadow: 0 1px 2px #e6e8f0;
   border-radius: 4px;
   overflow: hidden;
+  box-sizing: border-box;
 `;
 
 export const AllocationSwitcherOption = styled.div`
@@ -137,11 +141,11 @@ export const AllocationSwitcherOption = styled.div`
   padding: 11px 28px;
   cursor: pointer;
   font-weight: 500;
-  font-size: 12px;
+  font-size: ${({theme}) => theme.fontSizes.small};
   line-height: 18px;
   /* identical to box height, or 150% */
   text-align: center;
-  color: #2a3558;
+  color: ${({theme}) => theme.colors.blue[700]};
   &:hover {
     background: #f6f7fb;
   }
@@ -155,7 +159,7 @@ export const AllocationSwitcherOption = styled.div`
 export const BudgetBreakdownWrapper = styled.div`
   width: 100%;
   margin-top: 46px;
-  background: #f5f6fa;
+  background: ${({theme}) => theme.colors.background};
   border: 1px solid rgba(178, 187, 213, 0.5);
   border-radius: 4px;
   padding: 24px;
@@ -166,17 +170,17 @@ export const BreakdownTitle = styled.div`
   margin-bottom: 8px;
   font-style: normal;
   font-weight: 800;
-  font-size: 16px;
+  font-size: ${({theme}) => theme.fontSizes.increased};
   line-height: 24px;
-  color: #182033;
+  color: ${({theme}) => theme.colors.blue[900]};
 `;
 
 export const BreakdownSubtitle = styled.div`
   margin-bottom: 24px;
   font-weight: 400;
-  font-size: 14px;
+  font-size: ${({theme}) => theme.fontSizes.regular};
   line-height: 21px;
-  color: #99a4c2;
+  color: ${({theme}) => theme.colors.blue[400]};
 `;
 
 export const BudgetBreakdownDataWrapper = styled.div`
@@ -200,9 +204,9 @@ export const InputWrapper = styled.span`
     top: 0;
     left: 16px;
     content: '$';
-    font-size: 14px;
+    font-size: ${({theme}) => theme.fontSizes.regular};
     line-height: 21px;
-    color: #2a3558;
+    color: ${({theme}) => theme.colors.blue[700]};
     z-index: 1;
   }
 `;

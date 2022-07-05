@@ -1,14 +1,10 @@
 import React, { useRef, useState } from 'react';
 import { ChannelRowBreakdownItem } from 'features/SecondTab/ChannelRow/components/ChannelRowBreakdownItem';
 import { useDispatch } from 'react-redux';
-import {ReactComponent as ChannelIcon} from 'assets/icons/channel_icon.svg';
 import {ReactComponent as HorizontalScrollIcon} from 'assets/icons/scroll_icon.svg';
+import { ChannelInfo } from 'features/SecondTab/ChannelRow/components/ChannelInfo';
 import {
-	ChannelInfoWrapper,
 	ChannelRowWrapper,
-	ChannelLabel,
-	ChannelInfo,
-	ChannelName,
 	BudgetDataWrapper,
 	ScrollActionsBlock,
 	BudgetDataRow
@@ -24,10 +20,13 @@ export const ChannelRow = ({ channelData, channels }) => {
 
 	const [scrollGap, setScrollGap] = useState(0);
 	const [editItem, setEditItem] = useState(null);
+	const scrollParent = useRef(null);
 	const myRef = useRef(null);
 
 	const onScroll = () => {
-		const maxScrollLeft = myRef.current.scrollWidth - myRef.current.clientWidth;
+		const maxScrollLeft = myRef.current?.clientWidth - scrollParent?.current?.offsetWidth;
+
+		console.log('ON SCROLL', maxScrollLeft, scrollParent?.current?.clientWidth, myRef.current?.scrollWidth, myRef.current?.clientWidth);
 		if (!scrollGap) {
 			setScrollGap(maxScrollLeft);
 		} else {
@@ -52,17 +51,13 @@ export const ChannelRow = ({ channelData, channels }) => {
 		dispatch(updateChannelsData(dataToUpdate));
 	};
 
+	console.log('WIDTH', scrollParent?.current?.offsetWidth, myRef.current?.scrollWidth, myRef.current?.clientWidth);
+
 	return (
 		<ChannelRowWrapper>
-			<ChannelInfoWrapper>
-				<ChannelLabel>Channel</ChannelLabel>
-				<ChannelInfo>
-					<ChannelIcon />
-					<ChannelName>{name}</ChannelName>
-				</ChannelInfo>
-			</ChannelInfoWrapper>
-			<BudgetDataWrapper ref={myRef}>
-				<BudgetDataRow scrollGap={scrollGap}>
+			<ChannelInfo name={name}/>
+			<BudgetDataWrapper ref={scrollParent}>
+				<BudgetDataRow scrollGap={scrollGap} ref={myRef}>
 					{breakdownData.map((item) => (
 						<ChannelRowBreakdownItem
 							key={item.name}

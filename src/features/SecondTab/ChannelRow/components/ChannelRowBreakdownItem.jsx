@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { ItemLabel } from 'components/ItemLabel/ItemLabel';
 import { Tooltip } from 'components/Tooltip/Tooltip';
 import { BreakDownItemValue } from 'features/SecondTab/ChannelRow/components/BreakDownItemValue';
 import {ReactComponent as CancelIcon} from 'assets/icons/cancel_icon.svg';
@@ -11,6 +10,7 @@ import {
 	EditActionsWrapper,
 	BreakdownInput,
 	BreakdownInputWrapper,
+	BreakdownItemLabel
 } from 'features/SecondTab/ChannelRow/styles';
 
 const PREFIX = '$';
@@ -55,7 +55,9 @@ export const ChannelRowBreakdownItem = ({
 			onMouseEnter={() => !isEdit && !showEditIcon && setShowEditIcon(true)}
 			onMouseLeave={() => setShowEditIcon(false)}
 		>
-			<ItemLabel value={`${itemName} ${new Date().getFullYear().toString().substr(-2)}`} />
+			<BreakdownItemLabel>
+				{`${itemName} ${new Date().getFullYear().toString().slice(-2)}`}
+			</BreakdownItemLabel>
 			<BreakdownValueWrapper>
 				{isEdit ? (
 					<BreakdownInputWrapper>

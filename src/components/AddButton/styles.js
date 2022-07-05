@@ -9,9 +9,9 @@ export const CustomButton = styled.button`
   box-shadow: 0 1px 2px #e6e8f0;
   border-radius: 3px;
   font-weight: 600;
-  font-size: 12px;
+  font-size: ${({theme}) => theme.fontSizes.small};
   line-height: 16px;
-  color: #707ea7;
+  color: ${({theme}) => theme.colors.blue[500]};
   padding: 0 16px;
   box-sizing: border-box;
   & span {

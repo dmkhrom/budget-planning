@@ -9,11 +9,11 @@ const X_POSITIONS = {
 export const TooltipInfo = styled.div`
   display: flex;
   position: absolute;
-  visibility: ${(props) => (props.isShow ? 'visible' : 'hidden')};
-  left: ${props => X_POSITIONS[props.positionX || 'right']};
+  visibility: ${({ isShow }) => (isShow ? 'visible' : 'hidden')};
+  left: ${({ positionX }) => positionX ? X_POSITIONS[positionX] : X_POSITIONS.right };
   bottom: 30px;
   width: 200px;
-  font-size: 12px;
+  font-size: ${({theme}) => theme.fontSizes.small};
   background: linear-gradient(360deg, #f6f6f6 0%, #ffffff 100%);
   border: 1px solid rgba(178, 187, 213, 0.2);
   cursor: pointer;

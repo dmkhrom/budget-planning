@@ -6,36 +6,28 @@ export const ChannelActions = ({ id, editChannelName, removeChannel }) => {
 	const [showActions, setShowActions] = useState(false);
 
 	useEffect(() => {
-		document.addEventListener('click', () => {
-			setShowActions(false);
-		});
+		const hideShowActions = () => setShowActions(false);
+		document.addEventListener('click', hideShowActions);
 
-		return () => {
-			document.removeEventListener('click', () => {
-				setShowActions(false);
-			});
-		};
+		return () => document.removeEventListener('click', hideShowActions);
 	}, []);
 
-	const handleOpen = (e) => {
-		e.stopPropagation();
+	const handleOpen = () => {
 		setShowActions(!showActions);
 	};
 
-	const handleEdit = (e) => {
-		e.stopPropagation();
+	const handleEdit = () => {
 		editChannelName(true);
 		setShowActions(false);
 	};
-	const handleRemove = (e) => {
-		e.stopPropagation();
+	const handleRemove = () => {
 		removeChannel(id);
 		setShowActions(false);
 	};
 
 	return (
-		<ChannelActionsWrapper onClick={handleOpen}>
-			<ChannelActionsIcon />
+		<ChannelActionsWrapper onClick={e => e.stopPropagation()}>
+			<ChannelActionsIcon className='actions-icon' onClick={handleOpen} />
 			{showActions && (
 				<ActionsMenu>
 					<ActionsItem onClick={handleEdit}> Edit </ActionsItem>

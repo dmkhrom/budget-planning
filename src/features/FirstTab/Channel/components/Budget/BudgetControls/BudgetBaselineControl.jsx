@@ -8,7 +8,7 @@ export const BudgetBaselineControl = ({ annualAmount, handleAmountChange, disabl
 		<LabelWithTooltip label="Baseline [Annual] Budget" tooltipDescription="Annual budget amount" />
 		<NumericInput
 			value={annualAmount}
-			handleChange={handleAmountChange}
+			onChange={handleAmountChange}
 			disabled={disabled}
 			allowLeadingZeros={false}
 			isNumericString={true}

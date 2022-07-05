@@ -8,11 +8,11 @@ export const HeaderWrapper = styled.header`
 
 export const Title = styled.h1`
   font-weight: 500;
-  font-size: 24px;
+  font-size: ${({theme}) => theme.fontSizes.giant};
   line-height: 33px;
   margin-bottom: 16px;
   letter-spacing: -0.2px;
-  color: #182033;
+  color: ${({theme}) => theme.colors.blue[900]};
 `;
 
 export const SetupChannelWrapper = styled.div`
@@ -25,15 +25,15 @@ export const SetupChannelSubTitle = styled.div`
   top: 99px;
   margin-bottom: 8px;
   font-weight: 600;
-  font-size: 18px;
+  font-size: ${({theme}) => theme.fontSizes.increased};
   line-height: 25px;
-  color: #182033;
+  color: ${({theme}) => theme.colors.blue[900]};
 `;
 
 export const SetupChannelDescription = styled.div`
   max-width: 678px;
   font-weight: 400;
-  font-size: 14px;
+  font-size: ${({theme}) => theme.fontSizes.regular};
   line-height: 21px;
-  color: #99a4c2;
+  color: ${({theme}) => theme.colors.blue[400]};
 `;

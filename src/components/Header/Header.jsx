@@ -2,7 +2,6 @@ import React from 'react';
 import { AddButton } from 'components/AddButton/AddButton';
 import { useDispatch } from 'react-redux';
 import { addChannel } from 'redux/channelsSlice';
-import { getInitialChannelData } from 'utils';
 import {
 	HeaderWrapper,
 	Title,
@@ -15,10 +14,8 @@ export const Header = () => {
 
 	const dispatch = useDispatch();
 
-	const addNewChannel = (e) => {
-		e.stopPropagation();
-		const newChannel = getInitialChannelData('month');
-		dispatch(addChannel(newChannel));
+	const addNewChannel = () => {
+		dispatch(addChannel());
 	};
 	return (
 		<HeaderWrapper>

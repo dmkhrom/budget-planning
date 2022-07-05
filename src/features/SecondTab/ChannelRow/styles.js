@@ -14,7 +14,7 @@ export const ChannelRowWrapper = styled.div`
 `;
 
 export const ChannelInfoWrapper = styled.div`
-  width: 223px;
+  width: 265px;
   height: 128px;
   display: flex;
   flex-direction: column;
@@ -33,28 +33,25 @@ export const ChannelInfoWrapper = styled.div`
 
 export const ChannelLabel = styled.div`
   height: 16px;
-  left: 41px;
-  top: 15px;
   font-weight: 700;
-  font-size: 11px;
+  font-size: ${({theme}) => theme.fontSizes.tiny};
   line-height: 16px;
   text-transform: uppercase;
-  color: #99a4c2;
+  color: ${({theme}) => theme.colors.blue[400]};
 `;
 
-export const ChannelInfo = styled.div`
+export const ChannelInfoBlock = styled.div`
   display: flex;
   align-items: center;
 `;
 
 export const ChannelName = styled.div`
-  display: flex;
+  display: block;
   align-items: center;
-  max-width: 300px;
   font-weight: 500;
-  font-size: 14px;
+  font-size: ${({theme}) => theme.fontSizes.regular};
   line-height: 21px;
-  color: #222a41;
+  color: ${({theme}) => theme.colors.blue[800]};
   margin-left: 16px;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -66,19 +63,21 @@ export const BudgetDataWrapper = styled.div`
   display: flex;
   width: 100%;
   box-sizing: border-box;
-  padding: 14px 28px;
   overflow: hidden;
   z-index: 100;
+  margin-left: 24px;
 `;
 
 export const BudgetDataRow = styled.div`
   display: flex;
-  width: 100%;
   box-sizing: border-box;
   gap: 32px;
+  flex-wrap: nowrap;
+  padding: 14px 0;
   transition: 0.3s ease;
   transform: ${(props) =>
 		props.scrollGap ? `translateX(-${props.scrollGap}px)` : 'translateX(0)'};
+  flex: 0 0 auto;
 `;
 
 export const ScrollActionsBlock = styled.div`
@@ -117,9 +116,9 @@ export const BreakdownValueWrapper = styled.div`
   height: 36px;
   align-items: center;
   font-weight: 500;
-  font-size: 14px;
+  font-size: ${({theme}) => theme.fontSizes.regular};
   line-height: 20px;
-  color: #222a41;
+  color: ${({theme}) => theme.colors.blue[800]};
   & .edit-icon {
   	position: absolute;
   	bottom: 10px;
@@ -148,4 +147,12 @@ export const BreakdownInput = styled(CustomNumericInput)`
   min-width: 80px;
   height: 32px;
   margin-right: 4px;
+`;
+
+export const BreakdownItemLabel = styled.div`
+  font-size: ${({theme}) => theme.fontSizes.tiny};
+  font-weight: 700;
+  line-height: 16px;
+  color: ${({theme}) => theme.colors.blue[300]};
+  margin-bottom: 8px;
 `;

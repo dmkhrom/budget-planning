@@ -24,7 +24,7 @@ export const CustomNumericInput = styled(NumberFormat)`
   border-radius: 3px;
   padding-left: 8px;
   font-weight: 500;
-  font-size: 14px;
+  font-size: ${({theme}) => theme.fontSizes.regular};
   line-height: 21px;
-  color: ${(props) => (props.disabled ? '#99A4C2' : '#2A3558')};
+  color: ${({theme, disabled}) => (disabled ? theme.colors.blue[400] : theme.colors.blue[700])};
 `;

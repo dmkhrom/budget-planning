@@ -12,12 +12,13 @@ export const CustomLink = styled(NavLink)`
   height: 16px;
   text-decoration: none;
   font-weight: 600;
-  font-size: 20px;
+  font-size: ${({theme}) => theme.fontSizes.huge};
   line-height: 16px;
-  color: #000000;
+  color: ${({theme}) => theme.colors.grey};
   margin-right: 26px;
   padding-bottom: 10px;
   &.active {
-    border-bottom: 3px solid #000000;
+    color: ${({theme}) => theme.colors.black};
+    border-bottom: 3px solid ${({theme}) => theme.colors.black};
   }
 `;

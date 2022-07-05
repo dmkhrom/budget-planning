@@ -13,7 +13,7 @@ export const BudgetBreakdownItem = ({
 	disabled
 }) => (
 	<BudgetBreakdownItemWrapper>
-		<ItemLabel value={`${itemLabel} ${new Date().getFullYear().toString().substr(-2)}`} />
+		<ItemLabel value={`${itemLabel} ${new Date().getFullYear().toString().slice(-2)}`} />
 		<InputWrapper>
 			<AmountInput
 				value={itemValue}
