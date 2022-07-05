@@ -2,8 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { getInitialChannelData } from 'utils';
 
 const initialState = {
-	channels: [],
-	activeChannel: null
+	channels: []
 };
 
 const channelsSliceReducer = createSlice({
@@ -15,9 +14,6 @@ const channelsSliceReducer = createSlice({
 		},
 		deleteChannel: (state, { payload }) => {
 			state.channels = state.channels.filter((item) => item.id !== payload);
-		},
-		setActiveChannel: (state, { payload }) => {
-			state.activeChannel = payload;
 		},
 		updateChannelsData: (state, { payload }) => {
 			const immediateChannels = [...state.channels];
