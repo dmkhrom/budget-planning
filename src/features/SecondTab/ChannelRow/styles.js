@@ -14,7 +14,7 @@ export const ChannelRowWrapper = styled.div`
 `;
 
 export const ChannelInfoWrapper = styled.div`
-	width: 265px;
+	min-width: 265px;
 	height: 128px;
 	display: flex;
 	flex-direction: column;
