@@ -24,8 +24,6 @@ export const ChannelRow = ({ channelData, channels }) => {
 
 	const onScroll = () => {
 		const maxScrollLeft = myRef.current?.clientWidth - scrollParent?.current?.offsetWidth;
-
-		console.log('ON SCROLL', maxScrollLeft, scrollParent?.current?.clientWidth, myRef.current?.scrollWidth, myRef.current?.clientWidth);
 		if (!scrollGap) {
 			setScrollGap(maxScrollLeft);
 		} else {
@@ -49,8 +47,6 @@ export const ChannelRow = ({ channelData, channels }) => {
 
 		dispatch(updateChannelsData(dataToUpdate));
 	};
-
-	console.log('WIDTH', scrollParent?.current?.offsetWidth, myRef.current?.scrollWidth, myRef.current?.clientWidth);
 
 	return (
 		<ChannelRowWrapper>
