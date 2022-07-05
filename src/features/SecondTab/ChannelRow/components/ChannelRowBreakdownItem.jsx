@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import {ReactComponent as CancelIcon} from 'assets/icons/cancel_icon.svg';
 import {ReactComponent as EditIcon} from 'assets/icons/edit_icon.svg';
 import {ReactComponent as SaveIcon} from 'assets/icons/save_icon.svg';
@@ -100,4 +101,14 @@ export const ChannelRowBreakdownItem = ({
 			</BreakdownValueWrapper>
 		</ChannelRowBreakdownItemWrapper>
 	);
+};
+
+ChannelRowBreakdownItem.propTypes = {
+	disabled: PropTypes.bool,
+	isEdit: PropTypes.bool,
+	isManualType: PropTypes.bool,
+	itemName: PropTypes.string,
+	itemValue: PropTypes.number,
+	setEditItem: PropTypes.func,
+	updateChannelBudgetData: PropTypes.func
 };

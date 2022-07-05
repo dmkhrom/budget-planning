@@ -1,10 +1,9 @@
 import React from 'react';
-import { ItemLabelWrapper } from 'components/ItemLabel/styles';
 import PropTypes from 'prop-types';
-import { AddButton } from 'components/AddButton/AddButton';
+import { ItemLabelWrapper } from 'components/ItemLabel/styles';
 
 export const ItemLabel = ({ value }) => <ItemLabelWrapper>{value}</ItemLabelWrapper>;
 
-AddButton.propTypes = {
+ItemLabel.propTypes = {
 	value: PropTypes.string
 };

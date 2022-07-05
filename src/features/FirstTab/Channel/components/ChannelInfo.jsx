@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { ReactComponent as ArrowDown } from 'assets/icons/arrow_down_icon.svg';
 import { ReactComponent as ChannelLogo } from 'assets/icons/channel_icon.svg';
 import { DefaultInput } from 'components';
@@ -28,3 +29,14 @@ export const ChannelInfo = ({
 		</ChannelNameWrapper>
 	</ChannelInfoWrapper>
 );
+
+ChannelInfo.propTypes = {
+	channelName: PropTypes.string,
+	inputRef: PropTypes.oneOfType([
+		PropTypes.func,
+		PropTypes.shape({ current: PropTypes.instanceOf(Component) })
+	]),
+	isEdit: PropTypes.bool,
+	onCloseNameEdit: PropTypes.func,
+	changeChannelName: PropTypes.func
+};

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import {ReactComponent as ChannelActionsIcon} from 'assets/icons/actions_icon.svg';
 import { ActionsItem, ActionsMenu, ChannelActionsWrapper } from 'features/FirstTab/Channel/styles';
 
@@ -37,4 +38,10 @@ export const ChannelActions = ({ id, editChannelName, removeChannel }) => {
 			)}
 		</ChannelActionsWrapper>
 	);
+};
+
+ChannelActions.propTypes = {
+	id: PropTypes.string,
+	editChannelName: PropTypes.func,
+	removeChannel: PropTypes.func,
 };

@@ -1,5 +1,6 @@
 import React from 'react';
 import { LabelWithTooltip } from 'components/LabelWithTooltip/LabelWithTooltip';
+import PropTypes from 'prop-types';
 import { NumericInput } from 'components';
 import { BudgetBaselineControlWrapper } from 'features/FirstTab/Channel/styles';
 
@@ -17,3 +18,9 @@ export const BudgetBaselineControl = ({ annualAmount, handleAmountChange, disabl
 		/>
 	</BudgetBaselineControlWrapper>
 );
+
+BudgetBaselineControl.propTypes = {
+	annualAmount: PropTypes.number,
+	handleAmountChange: PropTypes.func,
+	disabled: PropTypes.bool
+};

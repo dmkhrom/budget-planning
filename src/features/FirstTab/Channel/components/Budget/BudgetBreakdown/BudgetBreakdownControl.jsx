@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { BudgetBreakdownItem } from 'features/FirstTab/Channel/components/Budget/BudgetBreakdown';
 import {
 	BreakdownSubtitle,
@@ -31,3 +32,14 @@ export const BudgetBreakdownControl = ({
 		</BudgetBreakdownDataWrapper>
 	</BudgetBreakdownWrapper>
 );
+
+BudgetBreakdownControl.propTypes = {
+	breakdownData: PropTypes.arrayOf(
+		PropTypes.shape({
+			name: PropTypes.string,
+			value: PropTypes.number
+		})
+	),
+	handleChangeBreakdownItemValue: PropTypes.func,
+	disableBreakdownItems: PropTypes.bool
+};

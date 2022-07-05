@@ -1,5 +1,6 @@
 import React from 'react';
 import { debounce } from 'lodash';
+import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { BudgetBreakdownControl } from 'features/FirstTab/Channel/components/Budget/BudgetBreakdown';
 import { BudgetControls } from 'features/FirstTab/Channel/components/Budget/BudgetControls';
@@ -102,4 +103,20 @@ export const Budget = ({ channelData }) => {
 			/>
 		</BudgetCommonWrapper>
 	);
+};
+
+Budget.propTypes = {
+	channelData: PropTypes.shape({
+		id: PropTypes.string,
+		name: PropTypes.string,
+		allocation: PropTypes.string,
+		frequency: PropTypes.string,
+		breakdownData: PropTypes.arrayOf(
+			PropTypes.shape({
+				name: PropTypes.string,
+				value: PropTypes.number
+			})
+		),
+		amount: PropTypes.number
+	})
 };

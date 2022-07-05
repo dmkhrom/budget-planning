@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { DefaultInput } from 'components/Inputs/DefaultInput';
 import PropTypes from 'prop-types';
 import { CustomNumericInput } from 'components/Inputs/styles';
 

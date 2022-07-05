@@ -7,3 +7,4 @@ export { ItemLabel } from './ItemLabel/ItemLabel.jsx';
 export { LabelWithTooltip } from './LabelWithTooltip/LabelWithTooltip.jsx';
 export { NavBar } from './NavBar/NavBar.jsx';
 export { Tooltip } from './Tooltip/Tooltip.jsx';
+export { ScrollableLayout } from './ScrollableLayout/ScrollableLayout.jsx';
