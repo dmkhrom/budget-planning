@@ -6,13 +6,13 @@ import {
 	AllocationSwitcherWrapper
 } from 'features/FirstTab/Channel/styles';
 
-export const AllocationSwitcher = ({ handleSwitch, allocationType }) => (
+export const AllocationSwitcher = ({ onChangeAllocationType, allocationType }) => (
 	<AllocationSwitcherWrapper>
 		{ALLOCATION_ITEMS.map((item) => (
 			<AllocationSwitcherOption
 				key={item}
 				className={allocationType === item ? 'active-item' : ''}
-				onClick={handleSwitch}
+				onClick={onChangeAllocationType}
 			>
 				{item}
 			</AllocationSwitcherOption>
@@ -22,5 +22,5 @@ export const AllocationSwitcher = ({ handleSwitch, allocationType }) => (
 
 AllocationSwitcher.propTypes = {
 	allocationType: PropTypes.string,
-	handleSwitch: PropTypes.func
+	onChangeAllocationType: PropTypes.func
 };

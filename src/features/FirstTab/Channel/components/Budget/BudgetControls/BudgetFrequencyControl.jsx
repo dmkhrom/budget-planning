@@ -3,17 +3,17 @@ import PropTypes from 'prop-types';
 import { LabelWithTooltip, DropDown } from 'components';
 import { BudgetFrequencyControlWrapper } from 'features/FirstTab/Channel/styles';
 
-export const BudgetFrequencyControl = ({ selectBudgetFrequency, budgetFrequency }) => (
+export const BudgetFrequencyControl = ({ onSelectBudgetFrequency, budgetFrequency }) => (
 	<BudgetFrequencyControlWrapper>
 		<LabelWithTooltip
 			label="Budget Frequency"
 			tooltipDescription="Setup your budget Annually, Monthly or Quarterly"
 		/>
-		<DropDown onSelect={selectBudgetFrequency} selectedItem={budgetFrequency} />
+		<DropDown onSelect={onSelectBudgetFrequency} selectedItem={budgetFrequency} />
 	</BudgetFrequencyControlWrapper>
 );
 
 BudgetFrequencyControl.propTypes = {
 	budgetFrequency: PropTypes.string,
-	selectBudgetFrequency: PropTypes.func
+	onSelectBudgetFrequency: PropTypes.func
 };

@@ -87,10 +87,14 @@ export const BreakdownValueWrapper = styled.div`
 	color: ${({ theme }) => theme.colors.blue[800]};
 
 	& .edit-icon {
+		visibility: hidden;
 		position: absolute;
 		bottom: 10px;
 		right: 0;
 		z-index: 100;
+	}
+	& .edit-icon.visible {
+		visibility: visible;
 	}
 `;
 
@@ -106,6 +110,7 @@ export const BreakdownInputWrapper = styled.div`
 	position: relative;
 	display: flex;
 	margin-left: -20px;
+	align-items: center;
 `;
 
 export const BreakdownInput = styled(CustomNumericInput)`

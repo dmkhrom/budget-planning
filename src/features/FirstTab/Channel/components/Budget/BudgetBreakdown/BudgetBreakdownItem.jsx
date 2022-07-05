@@ -10,7 +10,7 @@ import {
 export const BudgetBreakdownItem = ({
 	itemLabel,
 	itemValue,
-	handleChangeBreakdownItemValue,
+	onChangeBreakdownItemValue,
 	disabled
 }) => (
 	<BudgetBreakdownItemWrapper>
@@ -19,7 +19,7 @@ export const BudgetBreakdownItem = ({
 			<AmountInput
 				value={itemValue}
 				name={itemLabel}
-				onChange={handleChangeBreakdownItemValue}
+				onChange={onChangeBreakdownItemValue}
 				disabled={disabled}
 				allowLeadingZeros={false}
 				isNumericString={true}
@@ -32,7 +32,7 @@ export const BudgetBreakdownItem = ({
 
 BudgetBreakdownItem.propTypes = {
 	disabled: PropTypes.bool,
-	handleChangeBreakdownItemValue: PropTypes.func,
+	onChangeBreakdownItemValue: PropTypes.func,
 	itemLabel: PropTypes.string,
 	itemValue: PropTypes.number
 };

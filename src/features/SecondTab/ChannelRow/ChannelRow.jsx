@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { ScrollableLayout } from 'components';
@@ -11,9 +11,8 @@ export const ChannelRow = ({ channelData, channels }) => {
 	const { breakdownData, name, allocation } = channelData;
 
 	const dispatch = useDispatch();
-	const [editItem, setEditItem] = useState(null);
 
-	const updateChannelBudgetData = (name, value) => {
+	const onUpdateChannelBudgetData = (name, value) => {
 		const updatedBreakdownData = updateBreakdownData(
 			breakdownData,
 			name,
@@ -39,9 +38,7 @@ export const ChannelRow = ({ channelData, channels }) => {
 						key={item.name}
 						itemName={item.name}
 						itemValue={item.value}
-						updateChannelBudgetData={updateChannelBudgetData}
-						isEdit={editItem === item.name}
-						setEditItem={setEditItem}
+						onUpdateChannelBudgetData={onUpdateChannelBudgetData}
 						isManualType={allocation === 'Manual'}
 					/>
 				))}

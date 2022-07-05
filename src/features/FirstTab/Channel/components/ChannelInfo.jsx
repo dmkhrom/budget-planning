@@ -10,7 +10,7 @@ export const ChannelInfo = ({
 	inputRef,
 	isEdit,
 	onCloseNameEdit,
-	changeChannelName
+	onChangeChannelName
 }) => (
 	<ChannelInfoWrapper>
 		<ArrowDown className="chevron-icon" />
@@ -20,7 +20,7 @@ export const ChannelInfo = ({
 				<DefaultInput
 					onBlur={onCloseNameEdit}
 					inputRef={inputRef}
-					onChange={changeChannelName}
+					onChange={onChangeChannelName}
 					value={channelName}
 				/>
 			) : (
@@ -38,5 +38,5 @@ ChannelInfo.propTypes = {
 	]),
 	isEdit: PropTypes.bool,
 	onCloseNameEdit: PropTypes.func,
-	changeChannelName: PropTypes.func
+	onChangeChannelName: PropTypes.func
 };

@@ -19,7 +19,7 @@ export const Channel = ({ isActive, channelData, setActiveChannelId }) => {
 		setInputFocus();
 	}, [isEditChannelName]);
 
-	const changeChannelName = (e) => {
+	const onChangeChannelName = (e) => {
 		const dataToUpdate = {
 			...channelData,
 			name: e.target.value
@@ -47,13 +47,13 @@ export const Channel = ({ isActive, channelData, setActiveChannelId }) => {
 					channelName={name}
 					isEdit={isEditChannelName}
 					onCloseNameEdit={onCloseNameEdit}
-					changeChannelName={changeChannelName}
+					onChangeChannelName={onChangeChannelName}
 					inputRef={inputRef}
 				/>
 				<ChannelActions
 					id={id}
 					editChannelName={setIsEditChannelName}
-					removeChannel={onDeleteChannel}
+					onDeleteChannel={onDeleteChannel}
 				/>
 			</ChannelItem>
 			{isActive && (

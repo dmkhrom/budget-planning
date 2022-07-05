@@ -13,18 +13,18 @@ import {
 	BreakdownInputWrapper,
 	BreakdownItemLabel
 } from 'features/SecondTab/ChannelRow/styles';
+import { useOutsideClick } from 'hooks/useOutsideClick';
 
 const PREFIX = '$';
 
 export const ChannelRowBreakdownItem = ({
 	disabled,
-	isEdit,
 	isManualType,
 	itemName,
 	itemValue,
-	setEditItem,
-	updateChannelBudgetData
+	onUpdateChannelBudgetData
 }) => {
+	const [isEdit, setIsEdit] = useState(false);
 	const [showEditIcon, setShowEditIcon] = useState(false);
 	const [showTooltip, setShowTooltip] = useState(false);
 	const [value, setValue] = useState('');
@@ -33,23 +33,21 @@ export const ChannelRowBreakdownItem = ({
 		setValue(itemValue);
 	}, []);
 
-	const changeEditItem = () => {
-		setEditItem(itemName);
-	};
-
-	const cancelItemChanges = () => {
-		setEditItem(null);
+	const handleCancelItemChanges = () => {
+		setIsEdit(false);
 		setValue(itemValue);
 	};
 
-	const saveItemChanges = () => {
-		setEditItem(null);
-		updateChannelBudgetData(itemName, value);
+	const handleSaveItemChanges = () => {
+		setIsEdit(false);
+		onUpdateChannelBudgetData(itemName, value);
 	};
 
-	const handleChangeBreakdownItemValue = (e) => {
+	const onChangeBreakdownItemValue = (e) => {
 		setValue(e.target.value.slice(1));
 	};
+
+	const ref = useOutsideClick(handleCancelItemChanges);
 
 	return (
 		<ChannelRowBreakdownItemWrapper
@@ -59,7 +57,7 @@ export const ChannelRowBreakdownItem = ({
 			<BreakdownItemLabel>
 				{`${itemName} ${new Date().getFullYear().toString().slice(-2)}`}
 			</BreakdownItemLabel>
-			<BreakdownValueWrapper>
+			<BreakdownValueWrapper ref={ref}>
 				{isEdit ? (
 					<BreakdownInputWrapper>
 						<BreakdownInput
@@ -68,30 +66,28 @@ export const ChannelRowBreakdownItem = ({
 							disabled={disabled}
 							isNumericString={true}
 							name={itemName}
-							onChange={handleChangeBreakdownItemValue}
+							onChange={onChangeBreakdownItemValue}
 							placeholder={value}
 							prefix={PREFIX}
 							thousandSeparator={true}
 							value={value}
 						/>
 						<EditActionsWrapper>
-							<SaveIcon onClick={saveItemChanges} />
-							<CancelIcon onClick={cancelItemChanges} />
+							<SaveIcon onClick={handleSaveItemChanges} />
+							<CancelIcon onClick={handleCancelItemChanges} />
 						</EditActionsWrapper>
 					</BreakdownInputWrapper>
 				) : (
 					<BreakDownItemValue value={`${PREFIX} ${itemValue.toLocaleString()}`} />
 				)}
-				{!isEdit && showEditIcon && (
-					<EditIcon
-						className="edit-icon"
-						onClick={() => (isManualType ? changeEditItem() : {})}
-						onMouseEnter={() => !isManualType && setShowTooltip(true)}
-						onMouseLeave={() => {
-							setShowTooltip(false);
-						}}
-					/>
-				)}
+				<EditIcon
+					className={`edit-icon ${!isEdit && showEditIcon && 'visible'}`}
+					onClick={() => setIsEdit(true)}
+					onMouseEnter={() => !isManualType && setShowTooltip(true)}
+					onMouseLeave={() => {
+						setShowTooltip(false);
+					}}
+				/>
 				<Tooltip
 					isShow={showTooltip}
 					tooltipDescription={
@@ -105,10 +101,8 @@ export const ChannelRowBreakdownItem = ({
 
 ChannelRowBreakdownItem.propTypes = {
 	disabled: PropTypes.bool,
-	isEdit: PropTypes.bool,
 	isManualType: PropTypes.bool,
 	itemName: PropTypes.string,
 	itemValue: PropTypes.number,
-	setEditItem: PropTypes.func,
-	updateChannelBudgetData: PropTypes.func
+	onUpdateChannelBudgetData: PropTypes.func
 };

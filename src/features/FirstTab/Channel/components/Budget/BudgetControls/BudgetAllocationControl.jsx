@@ -4,17 +4,20 @@ import { LabelWithTooltip } from 'components';
 import { AllocationSwitcher } from 'features/FirstTab/Channel/components/Budget/BudgetControls';
 import { BudgetAllocationControlWrapper } from 'features/FirstTab/Channel/styles';
 
-export const BudgetAllocationControl = ({ changeAllocationType, allocationType }) => (
+export const BudgetAllocationControl = ({ onChangeAllocationType, allocationType }) => (
 	<BudgetAllocationControlWrapper>
 		<LabelWithTooltip
 			label="Budget Allocation"
 			tooltipDescription="Setup your budget manual or allocate amount equally among periods"
 		/>
-		<AllocationSwitcher handleSwitch={changeAllocationType} allocationType={allocationType} />
+		<AllocationSwitcher
+			onChangeAllocationType={onChangeAllocationType}
+			allocationType={allocationType}
+		/>
 	</BudgetAllocationControlWrapper>
 );
 
 BudgetAllocationControl.propTypes = {
 	allocationType: PropTypes.string,
-	changeAllocationType: PropTypes.func
+	onChangeAllocationType: PropTypes.func
 };

@@ -8,26 +8,26 @@ import {
 import { BudgetControlsWrapper } from 'features/FirstTab/Channel/styles';
 
 export const BudgetControls = ({
-	selectBudgetFrequency,
+	onSelectBudgetFrequency,
 	budgetFrequency,
 	annualAmount,
-	handleAmountChange,
-	changeAllocationType,
+	onAmountChange,
+	onChangeAllocationType,
 	allocationType,
 	disabledBaselineControl
 }) => (
 	<BudgetControlsWrapper>
 		<BudgetFrequencyControl
-			selectBudgetFrequency={selectBudgetFrequency}
+			onSelectBudgetFrequency={onSelectBudgetFrequency}
 			budgetFrequency={budgetFrequency}
 		/>
 		<BudgetBaselineControl
 			annualAmount={annualAmount || 0}
-			handleAmountChange={handleAmountChange}
+			onAmountChange={onAmountChange}
 			disabled={disabledBaselineControl}
 		/>
 		<BudgetAllocationControl
-			changeAllocationType={changeAllocationType}
+			onChangeAllocationType={onChangeAllocationType}
 			allocationType={allocationType}
 		/>
 	</BudgetControlsWrapper>
@@ -37,8 +37,8 @@ BudgetControls.propTypes = {
 	allocationType: PropTypes.string,
 	annualAmount: PropTypes.number,
 	budgetFrequency: PropTypes.string,
-	changeAllocationType: PropTypes.func,
+	onChangeAllocationType: PropTypes.func,
 	disabledBaselineControl: PropTypes.bool,
-	handleAmountChange: PropTypes.func,
-	selectBudgetFrequency: PropTypes.func
+	onAmountChange: PropTypes.func,
+	onSelectBudgetFrequency: PropTypes.func
 };

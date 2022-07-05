@@ -18,7 +18,7 @@ export const Budget = ({ channelData }) => {
 
 	const dispatch = useDispatch();
 
-	const changeBudgetFrequency = (e) => {
+	const onChangeBudgetFrequency = (e) => {
 		if (e.target.innerText === frequency) {
 			return;
 		}
@@ -30,7 +30,7 @@ export const Budget = ({ channelData }) => {
 		dispatch(updateChannelsData(dataToUpdate));
 	};
 
-	const annualBudgetAmountChange = (e) => {
+	const onChangeAnnualBudgetAmount = (e) => {
 		if (!e.target.value) {
 			return;
 		}
@@ -45,7 +45,7 @@ export const Budget = ({ channelData }) => {
 		dispatch(updateChannelsData(dataToUpdate));
 	};
 
-	const changeAllocationType = (e) => {
+	const onChangeAllocationType = (e) => {
 		if (e.target.innerText === allocation) {
 			return;
 		}
@@ -60,7 +60,7 @@ export const Budget = ({ channelData }) => {
 		dispatch(updateChannelsData(dataToUpdate));
 	};
 
-	const changeBreakdownItemValue = (e) => {
+	const onChangeBreakdownItemValue = (e) => {
 		const { value, name } = e.target;
 
 		if (!value.length) {
@@ -81,23 +81,23 @@ export const Budget = ({ channelData }) => {
 		dispatch(updateChannelsData(dataToUpdate));
 	};
 
-	const debouncedChangeBreakdownItemValue = debounce(changeBreakdownItemValue, 200);
-	const debouncedAnnualBudgetAmountChange = debounce(annualBudgetAmountChange, 200);
+	const debouncedChangeBreakdownItemValue = debounce(onChangeBreakdownItemValue, 200);
+	const debouncedAnnualBudgetAmountChange = debounce(onChangeAnnualBudgetAmount, 200);
 
 	return (
 		<BudgetCommonWrapper>
 			<BudgetControls
 				budgetFrequency={frequency}
 				annualAmount={amount}
-				handleAmountChange={debouncedAnnualBudgetAmountChange}
-				selectBudgetFrequency={changeBudgetFrequency}
-				changeAllocationType={changeAllocationType}
+				onAmountChange={debouncedAnnualBudgetAmountChange}
+				onSelectBudgetFrequency={onChangeBudgetFrequency}
+				onChangeAllocationType={onChangeAllocationType}
 				allocationType={allocation}
 				disabledBaselineControl={allocation === 'Manual'}
 			/>
 			<BudgetBreakdownControl
 				disableBreakdownItems={allocation === 'Equal'}
-				handleChangeBreakdownItemValue={debouncedChangeBreakdownItemValue}
+				onChangeBreakdownItemValue={debouncedChangeBreakdownItemValue}
 				breakdownData={breakdownData}
 			/>
 		</BudgetCommonWrapper>

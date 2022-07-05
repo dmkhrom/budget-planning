@@ -1,37 +1,26 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { ReactComponent as ChannelActionsIcon } from 'assets/icons/actions_icon.svg';
 import { ActionsItem, ActionsMenu, ChannelActionsWrapper } from 'features/FirstTab/Channel/styles';
+import { useOutsideClick } from 'hooks/useOutsideClick';
 
-export const ChannelActions = ({ id, editChannelName, removeChannel }) => {
+export const ChannelActions = ({ id, editChannelName, onDeleteChannel }) => {
 	const [showActions, setShowActions] = useState(false);
 
-	useEffect(() => {
-		const hideShowActions = () => setShowActions(false);
-		document.addEventListener('click', hideShowActions);
+	const ref = useOutsideClick(() => setShowActions(false));
 
-		return () => document.removeEventListener('click', hideShowActions);
-	}, []);
-
-	const handleOpen = (e) => {
+	const onHandleOpen = (e) => {
 		e.stopPropagation();
 		setShowActions(!showActions);
 	};
 
-	const handleEdit = () => {
-		editChannelName(true);
-	};
-	const handleRemove = () => {
-		removeChannel(id);
-	};
-
 	return (
-		<ChannelActionsWrapper onClick={handleOpen}>
+		<ChannelActionsWrapper onClick={onHandleOpen} ref={ref}>
 			<ChannelActionsIcon className="actions-icon" />
 			{showActions && (
 				<ActionsMenu>
-					<ActionsItem onClick={handleEdit}> Edit </ActionsItem>
-					<ActionsItem onClick={handleRemove}> Remove </ActionsItem>
+					<ActionsItem onClick={() => editChannelName(true)}> Edit </ActionsItem>
+					<ActionsItem onClick={() => onDeleteChannel(id)}> Remove </ActionsItem>
 				</ActionsMenu>
 			)}
 		</ChannelActionsWrapper>
@@ -41,5 +30,5 @@ export const ChannelActions = ({ id, editChannelName, removeChannel }) => {
 ChannelActions.propTypes = {
 	id: PropTypes.string,
 	editChannelName: PropTypes.func,
-	removeChannel: PropTypes.func
+	onDeleteChannel: PropTypes.func
 };
