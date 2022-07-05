@@ -1,8 +1,8 @@
 import React from 'react';
-import { BudgetBreakdownControl } from 'features/FirstTab/Channel/components/Budget/BudgetBreakdown/BudgetBreakdown';
-import { BudgetControls } from 'features/FirstTab/Channel/components/Budget/BudgetControls/BudgetControls';
 import { debounce } from 'lodash';
 import { useDispatch } from 'react-redux';
+import { BudgetBreakdownControl } from 'features/FirstTab/Channel/components/Budget/BudgetBreakdown';
+import { BudgetControls } from 'features/FirstTab/Channel/components/Budget/BudgetControls';
 import { BudgetCommonWrapper } from 'features/FirstTab/Channel/styles';
 import { updateChannelsData } from 'redux/channelsSlice';
 import {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Tooltip } from 'components/Tooltip/Tooltip';
 import {ReactComponent as InfoIcon} from 'assets/icons/info_icon.svg';
+import { Tooltip } from 'components';
 import { LabelWithTooltipWrapper } from 'components/LabelWithTooltip/styles';
 
 export const LabelWithTooltip = ({ label, tooltipDescription }) => {

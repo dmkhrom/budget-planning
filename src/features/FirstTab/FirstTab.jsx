@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Channel } from 'features/FirstTab/Channel/Channel';
 import { useSelector } from 'react-redux';
+import { Channel } from 'features/FirstTab/Channel';
 
 export const FirstTab = () => {
 

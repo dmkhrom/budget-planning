@@ -1,6 +1,6 @@
 import React from 'react';
-import { ChannelRow } from 'features/SecondTab/ChannelRow/ChannelRow';
 import { useSelector } from 'react-redux';
+import { ChannelRow } from 'features/SecondTab/ChannelRow';
 
 export const SecondTab = () => {
 	const { channels } = useSelector((state) => state.channelsData);

@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { Budget } from 'features/FirstTab/Channel/components/Budget/Budget';
-import { ChannelActions } from 'features/FirstTab/Channel/components/ChannelActions';
-import { ChannelInfo } from 'features/FirstTab/Channel/components/ChannelInfo';
 import { useDispatch } from 'react-redux';
+import { ChannelInfo, ChannelActions } from 'features/FirstTab/Channel/components';
+import { Budget } from 'features/FirstTab/Channel/components/Budget';
 import { ChannelCollapse, ChannelItem, ChannelWrapper } from 'features/FirstTab/Channel/styles';
 import { useFocus } from 'hooks/useFocus';
 import { deleteChannel, updateChannelsData } from 'redux/channelsSlice';

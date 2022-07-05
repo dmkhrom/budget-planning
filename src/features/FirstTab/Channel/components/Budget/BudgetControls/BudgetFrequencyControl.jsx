@@ -1,6 +1,5 @@
 import React from 'react';
-import { Dropdown } from 'components/DrowDown/DropDown';
-import { LabelWithTooltip } from 'components/LabelWithTooltip/LabelWithTooltip';
+import { LabelWithTooltip, DropDown } from 'components';
 import { BudgetFrequencyControlWrapper } from 'features/FirstTab/Channel/styles';
 
 export const BudgetFrequencyControl = ({ selectBudgetFrequency, budgetFrequency }) => (
@@ -9,6 +8,6 @@ export const BudgetFrequencyControl = ({ selectBudgetFrequency, budgetFrequency 
 			label="Budget Frequency"
 			tooltipDescription="Setup your budget Annually, Monthly or Quarterly"
 		/>
-		<Dropdown handleSelect={selectBudgetFrequency} selectedItem={budgetFrequency} />
+		<DropDown handleSelect={selectBudgetFrequency} selectedItem={budgetFrequency} />
 	</BudgetFrequencyControlWrapper>
 );

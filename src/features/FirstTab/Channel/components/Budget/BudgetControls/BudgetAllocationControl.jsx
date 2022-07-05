@@ -1,6 +1,6 @@
 import React from 'react';
-import { LabelWithTooltip } from 'components/LabelWithTooltip/LabelWithTooltip';
-import { AllocationSwitcher } from 'features/FirstTab/Channel/components/Budget/BudgetControls/AllocationSwitcher';
+import { LabelWithTooltip } from 'components';
+import { AllocationSwitcher } from 'features/FirstTab/Channel/components/Budget/BudgetControls';
 import { BudgetAllocationControlWrapper } from 'features/FirstTab/Channel/styles';
 
 export const BudgetAllocationControl = ({ changeAllocationType, allocationType }) => (

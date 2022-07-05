@@ -1,6 +1,6 @@
 import React from 'react';
-import { NumericInput } from 'components/Inputs/NumericInput';
 import { LabelWithTooltip } from 'components/LabelWithTooltip/LabelWithTooltip';
+import { NumericInput } from 'components';
 import { BudgetBaselineControlWrapper } from 'features/FirstTab/Channel/styles';
 
 export const BudgetBaselineControl = ({ annualAmount, handleAmountChange, disabled }) => (

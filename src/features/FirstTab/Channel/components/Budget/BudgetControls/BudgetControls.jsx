@@ -1,7 +1,5 @@
 import React from 'react';
-import { BudgetAllocationControl } from 'features/FirstTab/Channel/components/Budget/BudgetControls/BudgetAllocationControl';
-import { BudgetBaselineControl } from 'features/FirstTab/Channel/components/Budget/BudgetControls/BudgetBaselineControl';
-import { BudgetFrequencyControl } from 'features/FirstTab/Channel/components/Budget/BudgetControls/BudgetFrequencyControl';
+import { BudgetFrequencyControl, BudgetBaselineControl, BudgetAllocationControl } from 'features/FirstTab/Channel/components/Budget/BudgetControls';
 import { BudgetControlsWrapper } from 'features/FirstTab/Channel/styles';
 
 export const BudgetControls = ({

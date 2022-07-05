@@ -1,6 +1,6 @@
 import React from 'react';
-import { AddButton } from 'components/AddButton/AddButton';
 import { useDispatch } from 'react-redux';
+import { AddButton } from 'components';
 import { addChannel } from 'redux/channelsSlice';
 import {
 	HeaderWrapper,

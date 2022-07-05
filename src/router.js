@@ -1,7 +1,7 @@
 import React from 'react';
-import { FirstTab } from 'features/FirstTab/FirstTab';
-import { SecondTab } from 'features/SecondTab/SecondTab';
 import { Navigate, useRoutes } from 'react-router-dom';
+import { FirstTab } from 'features/FirstTab';
+import { SecondTab } from 'features/SecondTab';
 
 export const NAVIGATION = [
 	{

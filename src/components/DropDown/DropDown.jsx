@@ -6,9 +6,9 @@ import {
 	DropdownList,
 	DropdownSelectedItem,
 	DropdownWrapper
-} from 'components/DrowDown/styles';
+} from 'components/DropDown/styles';
 
-export const Dropdown = ({ handleSelect, selectedItem }) => {
+export const DropDown = ({ handleSelect, selectedItem }) => {
 	const [isOpen, setIsOpen] = useState(false);
 
 	return (

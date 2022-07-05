@@ -1,5 +1,5 @@
 import React from 'react';
-import { BudgetBreakdownItem } from 'features/FirstTab/Channel/components/Budget/BudgetBreakdown/BudgetBreakdownItem';
+import { BudgetBreakdownItem } from 'features/FirstTab/Channel/components/Budget/BudgetBreakdown';
 import {
 	BreakdownSubtitle,
 	BreakdownTitle,

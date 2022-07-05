@@ -1,5 +1,5 @@
 import React from 'react';
-import { ItemLabel } from 'components/ItemLabel/ItemLabel';
+import { ItemLabel } from 'components';
 import {
 	AmountInput,
 	BudgetBreakdownItemWrapper,

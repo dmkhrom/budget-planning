@@ -1,7 +1,7 @@
 import React from 'react';
-import { DefaultInput } from 'components/Inputs/DefaultInput';
 import { ReactComponent as ArrowDown } from 'assets/icons/arrow_down_icon.svg';
 import { ReactComponent as ChannelLogo } from 'assets/icons/channel_icon.svg';
+import { DefaultInput } from 'components';
 import { ChannelInfoWrapper, ChannelNameWrapper } from 'features/FirstTab/Channel/styles';
 
 export const ChannelInfo = ({

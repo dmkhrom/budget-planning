@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Tooltip } from 'components/Tooltip/Tooltip';
-import { BreakDownItemValue } from 'features/SecondTab/ChannelRow/components/BreakDownItemValue';
 import {ReactComponent as CancelIcon} from 'assets/icons/cancel_icon.svg';
 import {ReactComponent as EditIcon} from 'assets/icons/edit_icon.svg';
 import {ReactComponent as SaveIcon} from 'assets/icons/save_icon.svg';
+import { Tooltip } from 'components';
+import { BreakDownItemValue } from 'features/SecondTab/ChannelRow/components';
 import {
 	BreakdownValueWrapper,
 	ChannelRowBreakdownItemWrapper,
@@ -47,7 +47,7 @@ export const ChannelRowBreakdownItem = ({
 	};
 
 	const handleChangeBreakdownItemValue = (e) => {
-		setValue(e.target.value.substr(1));
+		setValue(e.target.value.slice(1));
 	};
 
 	return (

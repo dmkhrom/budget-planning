@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Tooltip } from 'components/Tooltip/Tooltip';
+import { Tooltip } from 'components';
 import { ItemValue } from 'features/SecondTab/ChannelRow/styles';
 
 const MAX_VISIBLE_SYMBOLS = 9;

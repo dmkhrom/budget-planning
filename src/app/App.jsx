@@ -1,10 +1,9 @@
 import React from 'react';
-import { Header } from 'components/Header/Header';
-import { NavBar } from 'components/NavBar/NavBar';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { AppWrapper } from 'app/styles';
+import { Header, NavBar } from 'components';
 import GlobalStyle from 'globalStyles';
 import store from 'redux/store';
 import { Router } from 'router';

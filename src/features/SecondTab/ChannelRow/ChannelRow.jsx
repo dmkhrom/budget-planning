@@ -1,8 +1,7 @@
 import React, { useRef, useState } from 'react';
-import { ChannelRowBreakdownItem } from 'features/SecondTab/ChannelRow/components/ChannelRowBreakdownItem';
 import { useDispatch } from 'react-redux';
 import {ReactComponent as HorizontalScrollIcon} from 'assets/icons/scroll_icon.svg';
-import { ChannelInfo } from 'features/SecondTab/ChannelRow/components/ChannelInfo';
+import { ChannelInfo, ChannelRowBreakdownItem } from 'features/SecondTab/ChannelRow/components';
 import {
 	ChannelRowWrapper,
 	BudgetDataWrapper,
