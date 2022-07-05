@@ -1,5 +1,7 @@
 import { BUDGET_FREQUENCY_ITEMS } from 'constants';
 import React, { useState } from 'react';
+import { AddButton } from 'components/AddButton/AddButton';
+import PropTypes from 'prop-types';
 import {ReactComponent as ArrowDown} from 'assets/icons/arrow_down_icon.svg';
 import {
 	DropdownItem,
@@ -28,4 +30,9 @@ export const DropDown = ({ handleSelect, selectedItem }) => {
 			)}
 		</DropdownWrapper>
 	);
+};
+
+AddButton.propTypes = {
+	handleSelect: PropTypes.func,
+	selectedItem: PropTypes.string
 };

@@ -15,7 +15,7 @@ module.exports = {
 	plugins: ['import', 'react', 'prettier'],
 	rules: {
 		indent: ['error', 'tab'],
-		'react/prop-types': 0,
+		'react/prop-types': 1,
 		'import/order': [
 			'error',
 			{

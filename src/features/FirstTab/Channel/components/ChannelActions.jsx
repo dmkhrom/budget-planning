@@ -6,6 +6,7 @@ export const ChannelActions = ({ id, editChannelName, removeChannel }) => {
 	const [showActions, setShowActions] = useState(false);
 
 	useEffect(() => {
+
 		const hideShowActions = () => setShowActions(false);
 		document.addEventListener('click', hideShowActions);
 

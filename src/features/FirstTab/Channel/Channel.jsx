@@ -5,6 +5,8 @@ import { Budget } from 'features/FirstTab/Channel/components/Budget';
 import { ChannelCollapse, ChannelItem, ChannelWrapper } from 'features/FirstTab/Channel/styles';
 import { useFocus } from 'hooks/useFocus';
 import { deleteChannel, updateChannelsData } from 'redux/channelsSlice';
+import PropTypes from 'prop-types';
+import { Tooltip } from 'components';
 
 export const Channel = ({ isActive, channelData, setActiveChannelId }) => {
 
@@ -63,4 +65,26 @@ export const Channel = ({ isActive, channelData, setActiveChannelId }) => {
 			)}
 		</ChannelWrapper>
 	);
+};
+
+Tooltip.propTypes = {
+	isActive: PropTypes.bool,
+	channelData: PropTypes.shape({
+		id: PropTypes.string,
+		name: PropTypes.number,
+		allocation: PropTypes.string,
+		frequency: PropTypes.string,
+		breakdownData: PropTypes.arrayOf(
+			PropTypes.shape({
+				title: PropTypes.string.isRequired,
+				price: PropTypes.number.isRequired,
+				duration: PropTypes.number.isRequired,
+				mentor: PropTypes.string.isRequired,
+				TA: PropTypes.string.isRequired,
+				classesPerWeek: PropTypes.number.isRequired,
+			})
+		),
+		amount: PropTypes.number
+	}),
+	setActiveChannelId: PropTypes.func
 };

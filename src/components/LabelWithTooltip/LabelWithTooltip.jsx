@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import {ReactComponent as InfoIcon} from 'assets/icons/info_icon.svg';
-import { Tooltip } from 'components';
+import { AddButton, Tooltip } from 'components';
 import { LabelWithTooltipWrapper } from 'components/LabelWithTooltip/styles';
+import PropTypes from 'prop-types';
 
 export const LabelWithTooltip = ({ label, tooltipDescription }) => {
 	const [isShow, setIsShow] = useState(false);
@@ -17,4 +18,9 @@ export const LabelWithTooltip = ({ label, tooltipDescription }) => {
 			<Tooltip positionX='right' isShow={isShow} tooltipDescription={tooltipDescription} />
 		</LabelWithTooltipWrapper>
 	);
+};
+
+LabelWithTooltip.propTypes = {
+	label: PropTypes.string,
+	tooltipDescription: PropTypes.string
 };
