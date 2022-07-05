@@ -5,13 +5,15 @@ import { Wrapper, Content, ActionsBlock } from './styles';
 
 export const ScrollableLayout = ({ children }) => {
 	const [scrollGap, setScrollGap] = useState(0);
-	const [isScrollHidden, setIsScrollHidden] = useState(false);
+	const [isScrollVisible, setIsScrollVisible] = useState(false);
 
 	const wrapperRef = useRef(null);
 	const contentRef = useRef(null);
 
 	useEffect(() => {
-		setIsScrollHidden(contentRef?.current?.clientWidth - wrapperRef?.current?.offsetWidth > 0);
+
+		console.log('', (contentRef?.current?.clientWidth - wrapperRef?.current?.offsetWidth));
+		setIsScrollVisible((contentRef?.current?.clientWidth - wrapperRef?.current?.offsetWidth) > 0);
 	}, []);
 
 	const onScroll = () => {
@@ -28,7 +30,7 @@ export const ScrollableLayout = ({ children }) => {
 			<Content scrollGap={scrollGap} ref={contentRef}>
 				{children}
 			</Content>
-			{isScrollHidden && (
+			{isScrollVisible && (
 				<ActionsBlock onClick={onScroll}>
 					<HorizontalScrollIcon
 						className={scrollGap ? 'scroll-icon-to-right' : 'scroll-icon-to-left'}

@@ -14,9 +14,10 @@ export const ChannelRowWrapper = styled.div`
 `;
 
 export const ChannelInfoWrapper = styled.div`
-	min-width: 265px;
+	width: 265px;
 	height: 128px;
 	display: flex;
+	flex: 0 0 auto;
 	flex-direction: column;
 	justify-content: space-between;
 	background: linear-gradient(

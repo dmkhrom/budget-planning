@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-	position: relative;
 	display: flex;
 	width: 100%;
 	box-sizing: border-box;
@@ -26,8 +25,8 @@ export const ActionsBlock = styled.div`
 	position: absolute;
 	width: 10px;
 	height: 10px;
-	top: 20px;
-	right: 0;
+	top: 19px;
+	right: -5px;
 	z-index: 100;
 	& .scroll-icon-to-right {
 		transform: rotate(180deg);
