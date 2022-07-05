@@ -14,7 +14,7 @@ export const CustomLink = styled(NavLink)`
 	font-weight: 600;
 	font-size: ${({ theme }) => theme.fontSizes.huge};
 	line-height: 16px;
-	color: ${({ theme }) => theme.colors.grey};
+	color: ${({ theme }) => theme.colors.grey[800]};
 	margin-right: 26px;
 	padding-bottom: 10px;
 	&.active {

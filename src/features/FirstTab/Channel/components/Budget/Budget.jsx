@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import { BudgetBreakdownControl } from 'features/FirstTab/Channel/components/Budget/BudgetBreakdown';
 import { BudgetControls } from 'features/FirstTab/Channel/components/Budget/BudgetControls';
 import { BudgetCommonWrapper } from 'features/FirstTab/Channel/styles';
-import { updateChannelsData } from 'redux/channelsSlice';
+import { updateChannel } from 'redux/channelsSlice';
 import {
 	updateDataWithFrequencyChanging,
 	recalculateAmount,
@@ -27,7 +27,7 @@ export const Budget = ({ channelData }) => {
 			...channelData,
 			...updateDataWithFrequencyChanging(frequency, e.target.innerText, breakdownData, amount)
 		};
-		dispatch(updateChannelsData(dataToUpdate));
+		dispatch(updateChannel(dataToUpdate));
 	};
 
 	const onChangeAnnualBudgetAmount = (e) => {
@@ -42,7 +42,7 @@ export const Budget = ({ channelData }) => {
 			breakdownData: recalculateBreakdownData([...breakdownData], parsedValue),
 			amount: parsedValue
 		};
-		dispatch(updateChannelsData(dataToUpdate));
+		dispatch(updateChannel(dataToUpdate));
 	};
 
 	const onChangeAllocationType = (e) => {
@@ -57,7 +57,7 @@ export const Budget = ({ channelData }) => {
 			}),
 			allocation: e.target.innerText
 		};
-		dispatch(updateChannelsData(dataToUpdate));
+		dispatch(updateChannel(dataToUpdate));
 	};
 
 	const onChangeBreakdownItemValue = (e) => {
@@ -78,7 +78,7 @@ export const Budget = ({ channelData }) => {
 			amount: recalculateAmount(updatedBreakdownData),
 			breakdownData: updatedBreakdownData
 		};
-		dispatch(updateChannelsData(dataToUpdate));
+		dispatch(updateChannel(dataToUpdate));
 	};
 
 	const debouncedChangeBreakdownItemValue = debounce(onChangeBreakdownItemValue, 200);

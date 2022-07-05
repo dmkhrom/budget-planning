@@ -114,8 +114,12 @@ export const BreakdownInputWrapper = styled.div`
 `;
 
 export const BreakdownInput = styled(CustomNumericInput)`
-	background: linear-gradient(360deg, #fafafc 0%, #ffffff 100%);
-	box-shadow: 0 1px 2px #e6e8f0;
+	background: linear-gradient(
+		360deg,
+		${({ theme }) => theme.colors.grey[300]} 0%,
+		${({ theme }) => theme.colors.white} 100%
+	);
+	box-shadow: 0 1px 2px ${({ theme }) => theme.colors.grey[600]};
 	min-width: 80px;
 	height: 32px;
 	margin-right: 4px;

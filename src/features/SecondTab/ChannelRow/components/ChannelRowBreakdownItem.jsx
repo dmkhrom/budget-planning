@@ -26,7 +26,6 @@ export const ChannelRowBreakdownItem = ({
 }) => {
 	const [isEdit, setIsEdit] = useState(false);
 	const [showEditIcon, setShowEditIcon] = useState(false);
-	const [showTooltip, setShowTooltip] = useState(false);
 	const [value, setValue] = useState('');
 
 	useEffect(() => {
@@ -80,20 +79,17 @@ export const ChannelRowBreakdownItem = ({
 				) : (
 					<BreakDownItemValue value={`${PREFIX} ${itemValue.toLocaleString()}`} />
 				)}
-				<EditIcon
-					className={`edit-icon ${!isEdit && showEditIcon && 'visible'}`}
-					onClick={() => setIsEdit(true)}
-					onMouseEnter={() => !isManualType && setShowTooltip(true)}
-					onMouseLeave={() => {
-						setShowTooltip(false);
-					}}
-				/>
 				<Tooltip
-					isShow={showTooltip}
+					disabled={isManualType}
 					tooltipDescription={
 						'You can\'t edit items manually channel with budget allocation type "Equal". If you want it - please, edit channel allocation type'
 					}
-				/>
+				>
+					<EditIcon
+						className={`edit-icon ${!isEdit && showEditIcon && 'visible'}`}
+						onClick={() => setIsEdit(true)}
+					/>
+				</Tooltip>
 			</BreakdownValueWrapper>
 		</ChannelRowBreakdownItemWrapper>
 	);

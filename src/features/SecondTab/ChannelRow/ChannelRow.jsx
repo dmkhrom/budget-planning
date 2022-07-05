@@ -4,10 +4,10 @@ import { useDispatch } from 'react-redux';
 import { ScrollableLayout } from 'components';
 import { ChannelInfo, ChannelRowBreakdownItem } from 'features/SecondTab/ChannelRow/components';
 import { ChannelRowWrapper } from 'features/SecondTab/ChannelRow/styles';
-import { updateChannelsData } from 'redux/channelsSlice';
+import { updateChannel } from 'redux/channelsSlice';
 import { recalculateAmount, updateBreakdownData } from 'utils';
 
-export const ChannelRow = ({ channelData, channels }) => {
+export const ChannelRow = ({ channelData }) => {
 	const { breakdownData, name, allocation } = channelData;
 
 	const dispatch = useDispatch();
@@ -24,9 +24,7 @@ export const ChannelRow = ({ channelData, channels }) => {
 			breakdownData: updatedBreakdownData
 		};
 
-		const dataToUpdate = { ...channels, ...updatedChannel };
-
-		dispatch(updateChannelsData(dataToUpdate));
+		dispatch(updateChannel(updatedChannel));
 	};
 
 	return (
@@ -60,6 +58,5 @@ ChannelRow.propTypes = {
 			})
 		),
 		amount: PropTypes.number
-	}),
-	channels: PropTypes.array
+	})
 };

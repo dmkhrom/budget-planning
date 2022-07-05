@@ -11,13 +11,13 @@ const { actions, reducer } = createSlice({
 		deleteChannel: (state, { payload }) => {
 			return state.filter((item) => item.id !== payload);
 		},
-		updateChannelsData: (state, { payload }) => {
+		updateChannel: (state, { payload }) => {
 			const channelIndex = state.findIndex((item) => item.id === payload.id);
 			state[channelIndex] = payload;
 		}
 	}
 });
 
-export const { addChannel, deleteChannel, updateChannelsData } = actions;
+export const { addChannel, deleteChannel, updateChannel } = actions;
 
 export default reducer;

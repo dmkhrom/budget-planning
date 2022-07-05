@@ -5,7 +5,7 @@ import { ChannelInfo, ChannelActions } from 'features/FirstTab/Channel/component
 import { Budget } from 'features/FirstTab/Channel/components/Budget';
 import { ChannelCollapse, ChannelItem, ChannelWrapper } from 'features/FirstTab/Channel/styles';
 import { useFocus } from 'hooks/useFocus';
-import { deleteChannel, updateChannelsData } from 'redux/channelsSlice';
+import { deleteChannel, updateChannel } from 'redux/channelsSlice';
 
 export const Channel = ({ isActive, channelData, setActiveChannelId }) => {
 	const dispatch = useDispatch();
@@ -24,7 +24,7 @@ export const Channel = ({ isActive, channelData, setActiveChannelId }) => {
 			...channelData,
 			name: e.target.value
 		};
-		dispatch(updateChannelsData(dataToUpdate));
+		dispatch(updateChannel(dataToUpdate));
 	};
 
 	const handleChangeActiveChannel = (e) => {

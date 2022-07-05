@@ -15,7 +15,7 @@ export const ChannelItem = styled.div`
 	width: 100%;
 	height: 52px;
 	margin: 0 auto;
-	background: #f6f7fb;
+	background: ${({ theme }) => theme.colors.grey[500]};
 	border: 1px solid rgba(178, 187, 213, 0.5);
 	border-radius: ${({ isActive }) => (isActive ? '4px 4px 0 0' : '4px')};
 	padding: 0 15px 0 16px;
@@ -66,7 +66,7 @@ export const ActionsMenu = styled.div`
 	font-weight: 500;
 	font-size: ${({ theme }) => theme.fontSizes.regular};
 	line-height: 21px;
-	background: #ffffff;
+	background: ${({ theme }) => theme.colors.white};
 	border: 1px solid rgba(178, 187, 213, 0.5);
 	box-shadow: 0 4px 16px rgba(24, 32, 51, 0.12);
 	border-radius: 4px;
@@ -124,9 +124,9 @@ export const BudgetAllocationControlWrapper = styled(BudgetCommonWrapper)`
 
 export const AllocationSwitcherWrapper = styled.div`
 	display: flex;
-	background: ${({ theme }) => theme.colors.background};
+	background: ${({ theme }) => theme.colors.grey[400]};
 	border: 1px solid rgba(178, 187, 213, 0.5);
-	box-shadow: 0 1px 2px #e6e8f0;
+	box-shadow: 0 1px 2px ${({ theme }) => theme.colors.grey[600]};
 	border-radius: 4px;
 	overflow: hidden;
 	box-sizing: border-box;
@@ -146,20 +146,24 @@ export const AllocationSwitcherOption = styled.div`
 	/* identical to box height, or 150% */
 	text-align: center;
 	color: ${({ theme }) => theme.colors.blue[700]};
-	&:hover {
-		background: #f6f7fb;
-	}
 	&.active-item {
-		background: linear-gradient(360deg, #fafafc 0%, #ffffff 100%);
+		background: linear-gradient(
+			360deg,
+			${({ theme }) => theme.colors.grey[300]} 0%,
+			${({ theme }) => theme.colors.white} 100%
+		);
 		border: 1px solid rgba(178, 187, 213, 0.5);
 		border-radius: 4px;
+	}
+	&:hover {
+		background: ${({ theme }) => theme.colors.grey[500]};
 	}
 `;
 
 export const BudgetBreakdownWrapper = styled.div`
 	width: 100%;
 	margin-top: 46px;
-	background: ${({ theme }) => theme.colors.background};
+	background: ${({ theme }) => theme.colors.grey[400]};
 	border: 1px solid rgba(178, 187, 213, 0.5);
 	border-radius: 4px;
 	padding: 24px;
@@ -212,7 +216,11 @@ export const InputWrapper = styled.span`
 `;
 
 export const AmountInput = styled(CustomNumericInput)`
-	background: linear-gradient(360deg, #fafafc 0%, #ffffff 100%);
-	box-shadow: 0 1px 2px #e6e8f0;
+	background: linear-gradient(
+		360deg,
+		${({ theme }) => theme.colors.grey[300]} 0%,
+		${({ theme }) => theme.colors.white} 100%
+	);
+	box-shadow: 0 1px 2px ${({ theme }) => theme.colors.grey[600]};
 	padding-left: 28px;
 `;

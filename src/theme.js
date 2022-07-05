@@ -12,9 +12,18 @@ const palette = {
 		500: '#EE2032',
 		200: '#FDE8EA'
 	},
+	grey: {
+		800: '#7E7E7E',
+		700: '#ECECEC',
+		600: '#E6E8F0',
+		500: '#f6f7fb',
+		400: '#f5f6fa',
+		300: '#fafafc'
+
+	},
 	black: '#000000',
-	grey: '#7E7E7E',
-	background: '#f5f6fa'
+	shadow: '#e6e8f0',
+	white: '#ffffff'
 };
 
 const sizes = {

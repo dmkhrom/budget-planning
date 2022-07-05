@@ -1,13 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { TooltipInfo } from 'components/Tooltip/styles';
+import { TooltipContainer, TooltipInfo } from 'components/Tooltip/styles';
 
-export const Tooltip = ({ tooltipDescription, ...props }) => (
-	<TooltipInfo {...props}>{tooltipDescription}</TooltipInfo>
-);
+export const Tooltip = ({ tooltipDescription, children, disabled, ...props }) => {
+
+	const [showTooltip, setShowTooltip] = useState(false);
+
+	return (
+		<TooltipContainer
+			onMouseEnter={() => !disabled && setShowTooltip(true)}
+			onMouseLeave={() => setShowTooltip(false)}
+		>
+			{children}
+			<TooltipInfo show={showTooltip} {...props}>{tooltipDescription}</TooltipInfo>
+		</TooltipContainer>
+	);};
 
 Tooltip.propTypes = {
+	disabled: PropTypes.bool,
 	positionX: PropTypes.string,
-	isShow: PropTypes.bool,
-	tooltipDescription: PropTypes.string
+	tooltipDescription: PropTypes.string,
+	children: PropTypes.node
 };
