@@ -28,10 +28,10 @@ export const Channel = ({ isActive, channelData }) => {
 	};
 
 	const changeActiveChannel = (e) => {
-		if (e.target.className.includes('channel-actions')) {
-			return;
+		if (e.currentTarget === e.target) {
+			dispatch(setActiveChannelId(isActive ? null : id));
 		}
-		dispatch(setActiveChannelId(isActive ? null : id));
+
 	};
 
 	const onDeleteChannel = () => {

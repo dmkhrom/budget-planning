@@ -32,6 +32,7 @@ export const ChannelItem = styled.div`
 export const ChannelInfoWrapper = styled.div`
 	display: flex;
 	align-items: center;
+	pointer-events: none;
 `;
 
 export const ChannelNameWrapper = styled.div`

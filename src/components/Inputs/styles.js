@@ -14,6 +14,7 @@ export const CustomInput = styled.input`
 	box-shadow: 0 1px 2px ${({ theme }) => theme.palette.grey[600]};
 	border-radius: 3px;
 	padding-left: 8px;
+	pointer-events: auto;
 	&:focus {
 		border: 1px solid rgba(178, 187, 213, 0.9);
 	}

@@ -14,14 +14,14 @@ export const ChannelActions = ({ id, setIsEditChannelName, onDeleteChannel }) =>
 	};
 
 	return (
-		<ChannelActionsWrapper className="channel-actions" onClick={handleOpenActions} ref={ref}>
+		<ChannelActionsWrapper onClick={handleOpenActions} ref={ref}>
 			<ChannelActionsIcon />
 			{showActions && (
 				<ActionsMenu>
-					<ActionsItem className="channel-actions" onClick={() => setIsEditChannelName(true)}>
+					<ActionsItem onClick={() => setIsEditChannelName(true)}>
 						Edit
 					</ActionsItem>
-					<ActionsItem className="channel-actions" onClick={() => onDeleteChannel(id)}>
+					<ActionsItem onClick={() => onDeleteChannel(id)}>
 						Remove
 					</ActionsItem>
 				</ActionsMenu>
