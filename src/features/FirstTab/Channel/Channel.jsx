@@ -19,7 +19,7 @@ export const Channel = ({ isActive, channelData }) => {
 		setInputFocus();
 	}, [isEditChannelName]);
 
-	const onChangeChannelName = (e) => {
+	const changeChannelName = (e) => {
 		const dataToUpdate = {
 			...channelData,
 			name: e.target.value
@@ -34,11 +34,11 @@ export const Channel = ({ isActive, channelData }) => {
 		dispatch(setActiveChannelId(isActive ? null : id));
 	};
 
-	const onDeleteChannel = () => {
+	const handleDeleteChannel = () => {
 		dispatch(deleteChannel(id));
 	};
 
-	const onCloseNameEdit = () => {
+	const closeNameEdit = () => {
 		setIsEditChannelName(false);
 	};
 
@@ -48,14 +48,14 @@ export const Channel = ({ isActive, channelData }) => {
 				<ChannelInfo
 					channelName={name}
 					isEdit={isEditChannelName}
-					onCloseNameEdit={onCloseNameEdit}
-					onChangeChannelName={onChangeChannelName}
+					onCloseNameEdit={closeNameEdit}
+					onChangeChannelName={changeChannelName}
 					inputRef={inputRef}
 				/>
 				<ChannelActions
 					id={id}
 					editChannelName={setIsEditChannelName}
-					onDeleteChannel={onDeleteChannel}
+					onDeleteChannel={handleDeleteChannel}
 				/>
 			</ChannelItem>
 			{isActive && (

@@ -9,12 +9,12 @@ export const ChannelActions = ({ id, editChannelName, onDeleteChannel }) => {
 
 	const ref = useOutsideClick(() => setShowActions(false));
 
-	const onHandleOpen = () => {
+	const handleOpenActions = () => {
 		setShowActions(!showActions);
 	};
 
 	return (
-		<ChannelActionsWrapper className="channel-actions" onClick={onHandleOpen} ref={ref}>
+		<ChannelActionsWrapper className="channel-actions" onClick={handleOpenActions} ref={ref}>
 			<ChannelActionsIcon />
 			{showActions && (
 				<ActionsMenu>
