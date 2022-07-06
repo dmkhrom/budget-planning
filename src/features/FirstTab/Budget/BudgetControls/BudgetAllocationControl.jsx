@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { LabelWithTooltip } from 'components';
-import { AllocationSwitcher } from 'features/FirstTab/Channel/components/Budget/BudgetControls';
+import { AllocationSwitcher } from 'features/FirstTab/Budget/BudgetControls/index';
 import { BudgetAllocationControlWrapper } from 'features/FirstTab/Channel/styles';
 
 export const BudgetAllocationControl = ({ onChangeAllocationType, allocationType }) => (

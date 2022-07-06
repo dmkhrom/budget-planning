@@ -23,7 +23,7 @@ export const Content = styled.div`
 export const ActionsBlock = styled.div`
 	display: flex;
 	position: absolute;
-	top: 19px;
+	top: 14px;
 	right: -5px;
 	z-index: 100;
 	& .scroll-icon-to-right {

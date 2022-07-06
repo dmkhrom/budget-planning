@@ -2,8 +2,8 @@ import React from 'react';
 import { debounce } from 'lodash';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { BudgetBreakdownControl } from 'features/FirstTab/Channel/components/Budget/BudgetBreakdown';
-import { BudgetControls } from 'features/FirstTab/Channel/components/Budget/BudgetControls';
+import { BudgetBreakdownControl } from 'features/FirstTab/Budget/BudgetBreakdown';
+import { BudgetControls } from 'features/FirstTab/Budget/BudgetControls';
 import { BudgetCommonWrapper } from 'features/FirstTab/Channel/styles';
 import { updateChannel } from 'redux/channelsSlice';
 import {

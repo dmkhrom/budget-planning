@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { BudgetBreakdownItem } from 'features/FirstTab/Channel/components/Budget/BudgetBreakdown';
+import { BudgetBreakdownItem } from 'features/FirstTab/Budget/BudgetBreakdown/index';
 import {
 	BreakdownSubtitle,
 	BreakdownTitle,

@@ -4,7 +4,7 @@ import {
 	BudgetFrequencyControl,
 	BudgetBaselineControl,
 	BudgetAllocationControl
-} from 'features/FirstTab/Channel/components/Budget/BudgetControls';
+} from 'features/FirstTab/Budget/BudgetControls/index';
 import { BudgetControlsWrapper } from 'features/FirstTab/Channel/styles';
 
 export const BudgetControls = ({

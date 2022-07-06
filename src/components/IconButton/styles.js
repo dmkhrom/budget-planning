@@ -5,7 +5,7 @@ export const IconButtonWrapper = styled.div`
 	align-items: center;
 	justify-content: center;
 	cursor: pointer;
-	padding: 5px;
+	padding: 7px;
 	box-sizing: border-box;
 	border-radius: 50%;
 	&:hover {
