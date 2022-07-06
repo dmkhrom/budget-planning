@@ -30,12 +30,7 @@ export const recalculateBreakdownData = (array, amount) =>
 export const updateBreakdownData = (array, itemName, value) =>
 	array.map((item) => (item.name === itemName ? { ...item, value } : item));
 
-export const updateDataWithFrequencyChanging = (
-	prevFrequencyType,
-	newFrequencyType,
-	amount
-) => {
-
+export const updateDataWithFrequencyChanging = (prevFrequencyType, newFrequencyType, amount) => {
 	if (newFrequencyType === 'Annually') {
 		return {
 			breakdownData: recalculateBreakdownData(getBreakDownInitialData(BREAKDOWN_MONTHS), amount),

@@ -5,8 +5,6 @@ import { ActionsItem, ActionsMenu, ChannelActionsWrapper } from 'features/FirstT
 import { useOutsideClick } from 'hooks/useOutsideClick';
 
 export const ChannelActions = ({ id, editChannelName, onDeleteChannel }) => {
-
-
 	const [showActions, setShowActions] = useState(false);
 
 	const ref = useOutsideClick(() => setShowActions(false));
@@ -16,7 +14,7 @@ export const ChannelActions = ({ id, editChannelName, onDeleteChannel }) => {
 	};
 
 	return (
-		<ChannelActionsWrapper className="channel-actions"  onClick={onHandleOpen} ref={ref}>
+		<ChannelActionsWrapper className="channel-actions" onClick={onHandleOpen} ref={ref}>
 			<ChannelActionsIcon />
 			{showActions && (
 				<ActionsMenu>

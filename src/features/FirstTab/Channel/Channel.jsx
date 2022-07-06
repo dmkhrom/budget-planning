@@ -28,7 +28,7 @@ export const Channel = ({ isActive, channelData, setActiveChannelId }) => {
 	};
 
 	const handleChangeActiveChannel = (e) => {
-		if(e.target.className.includes('channel-actions')) {
+		if (e.target.className.includes('channel-actions')) {
 			return;
 		}
 		setActiveChannelId(isActive ? null : id);
