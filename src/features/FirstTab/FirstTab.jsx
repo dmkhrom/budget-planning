@@ -6,10 +6,6 @@ export const FirstTab = () => {
 	const { channelsList, activeChannelId } = useSelector((state) => state.channelsData);
 
 	return channelsList.map((channel) => (
-		<Channel
-			key={channel.id}
-			isActive={activeChannelId === channel.id}
-			channelData={channel}
-		/>
+		<Channel key={channel.id} isActive={activeChannelId === channel.id} channelData={channel} />
 	));
 };
