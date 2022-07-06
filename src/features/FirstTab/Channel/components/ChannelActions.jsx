@@ -18,12 +18,8 @@ export const ChannelActions = ({ id, setIsEditChannelName, onDeleteChannel }) =>
 			<ChannelActionsIcon />
 			{showActions && (
 				<ActionsMenu>
-					<ActionsItem onClick={() => setIsEditChannelName(true)}>
-						Edit
-					</ActionsItem>
-					<ActionsItem onClick={() => onDeleteChannel(id)}>
-						Remove
-					</ActionsItem>
+					<ActionsItem onClick={() => setIsEditChannelName(true)}>Edit</ActionsItem>
+					<ActionsItem onClick={() => onDeleteChannel(id)}>Remove</ActionsItem>
 				</ActionsMenu>
 			)}
 		</ChannelActionsWrapper>

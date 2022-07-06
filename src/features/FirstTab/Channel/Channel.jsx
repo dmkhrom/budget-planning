@@ -31,7 +31,6 @@ export const Channel = ({ isActive, channelData }) => {
 		if (e.currentTarget === e.target) {
 			dispatch(setActiveChannelId(isActive ? null : id));
 		}
-
 	};
 
 	const onDeleteChannel = () => {
