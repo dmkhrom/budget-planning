@@ -5,9 +5,9 @@ import { ChannelInfo, ChannelActions } from 'features/FirstTab/Channel/component
 import { Budget } from 'features/FirstTab/Channel/components/Budget';
 import { ChannelCollapse, ChannelItem, ChannelWrapper } from 'features/FirstTab/Channel/styles';
 import { useFocus } from 'hooks/useFocus';
-import { deleteChannel, updateChannel } from 'redux/channelsSlice';
+import { deleteChannel, setActiveChannelId, updateChannel } from 'redux/channelsSlice';
 
-export const Channel = ({ isActive, channelData, setActiveChannelId }) => {
+export const Channel = ({ isActive, channelData }) => {
 	const dispatch = useDispatch();
 
 	const [isEditChannelName, setIsEditChannelName] = useState(false);
@@ -31,7 +31,7 @@ export const Channel = ({ isActive, channelData, setActiveChannelId }) => {
 		if (e.target.className.includes('channel-actions')) {
 			return;
 		}
-		setActiveChannelId(isActive ? null : id);
+		dispatch(setActiveChannelId(isActive ? null : id));
 	};
 
 	const onDeleteChannel = () => {
@@ -81,6 +81,5 @@ Channel.propTypes = {
 			})
 		),
 		amount: PropTypes.number
-	}),
-	setActiveChannelId: PropTypes.func
+	})
 };
