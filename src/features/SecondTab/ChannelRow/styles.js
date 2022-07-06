@@ -109,7 +109,6 @@ export const ItemValue = styled.div`
 export const BreakdownInputWrapper = styled.div`
 	position: relative;
 	display: flex;
-	margin-left: -20px;
 	align-items: center;
 `;
 
