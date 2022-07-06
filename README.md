@@ -8,10 +8,11 @@ Simple application developed within candidate assignment test. With it you can t
 
 ## Technologies
 Project is created with:
-* React - to build an interface
-* Redux/redux-toolkit - for state management
-* Styled-components - for styles
-* Eslint - for improving code quality
+* react - to build an interface
+* redux/redux-toolkit - for state management
+* styled-components - for styles
+* eslint - for improving code quality
+* uuid - id generating tool
 
 ## Linting
 To check code against the eslint codestyle rules you need to run:
