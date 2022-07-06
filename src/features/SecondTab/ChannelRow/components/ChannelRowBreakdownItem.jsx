@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { ReactComponent as CancelIcon } from 'assets/icons/cancel_icon.svg';
 import { ReactComponent as EditIcon } from 'assets/icons/edit_icon.svg';
 import { ReactComponent as SaveIcon } from 'assets/icons/save_icon.svg';
-import { Tooltip } from 'components';
+import { IconButton, Tooltip } from 'components';
 import { BreakDownItemValue } from 'features/SecondTab/ChannelRow/components';
 import {
 	BreakdownValueWrapper,
@@ -11,7 +11,7 @@ import {
 	EditActionsWrapper,
 	BreakdownInput,
 	BreakdownInputWrapper,
-	BreakdownItemLabel
+	BreakdownItemLabel, EditButtonWrapper
 } from 'features/SecondTab/ChannelRow/styles';
 import { useOutsideClick } from 'hooks/useOutsideClick';
 
@@ -85,10 +85,13 @@ export const ChannelRowBreakdownItem = ({
 						'You can\'t edit items manually channel with budget allocation type "Equal". If you want it - please, edit channel allocation type'
 					}
 				>
-					<EditIcon
-						className={`edit-icon ${!isEdit && showEditIcon && 'visible'}`}
-						onClick={() => isManualType && setIsEdit(true)}
-					/>
+					<EditButtonWrapper visible={!isEdit && showEditIcon}>
+						<IconButton
+							onClick={() => isManualType && setIsEdit(true)}
+						>
+							<EditIcon />
+						</IconButton>
+					</EditButtonWrapper>
 				</Tooltip>
 			</BreakdownValueWrapper>
 		</ChannelRowBreakdownItemWrapper>

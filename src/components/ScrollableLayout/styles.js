@@ -23,8 +23,6 @@ export const Content = styled.div`
 export const ActionsBlock = styled.div`
 	display: flex;
 	position: absolute;
-	width: 10px;
-	height: 10px;
 	top: 19px;
 	right: -5px;
 	z-index: 100;

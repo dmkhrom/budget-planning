@@ -85,15 +85,15 @@ export const BreakdownValueWrapper = styled.div`
 	font-size: ${({ theme }) => theme.fontSizes.regular};
 	line-height: 20px;
 	color: ${({ theme }) => theme.palette.blue[800]};
+`;
 
-	& .edit-icon {
-		visibility: hidden;
-		position: absolute;
-		bottom: 10px;
-		right: 0;
-		z-index: 100;
-	}
-	& .edit-icon.visible {
+export const EditButtonWrapper = styled.div`
+	visibility: ${({ visible}) => visible ? 'visible' : 'hidden'};
+	position: absolute;
+	right: 0;
+	bottom: 7px;
+	z-index: 100;
+	&.visible {
 		visibility: visible;
 	}
 `;

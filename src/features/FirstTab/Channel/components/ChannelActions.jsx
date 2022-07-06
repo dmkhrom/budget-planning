@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { ReactComponent as ChannelActionsIcon } from 'assets/icons/actions_icon.svg';
+import { IconButton } from 'components';
 import { ActionsItem, ActionsMenu, ChannelActionsWrapper } from 'features/FirstTab/Channel/styles';
 import { useOutsideClick } from 'hooks/useOutsideClick';
 
@@ -14,8 +15,10 @@ export const ChannelActions = ({ id, setIsEditChannelName, onDeleteChannel }) =>
 	};
 
 	return (
-		<ChannelActionsWrapper onClick={handleOpenActions} ref={ref}>
-			<ChannelActionsIcon />
+		<ChannelActionsWrapper ref={ref}>
+			<IconButton onClick={handleOpenActions}>
+				<ChannelActionsIcon />
+			</IconButton>
 			{showActions && (
 				<ActionsMenu>
 					<ActionsItem onClick={() => setIsEditChannelName(true)}>Edit</ActionsItem>

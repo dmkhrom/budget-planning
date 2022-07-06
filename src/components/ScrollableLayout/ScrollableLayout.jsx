@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { IconButton } from 'components/IconButton/IconButton';
 import PropTypes from 'prop-types';
 import { ReactComponent as HorizontalScrollIcon } from 'assets/icons/scroll_icon.svg';
 import { Wrapper, Content, ActionsBlock } from './styles';
@@ -29,10 +30,12 @@ export const ScrollableLayout = ({ children }) => {
 				{children}
 			</Content>
 			{isScrollVisible && (
-				<ActionsBlock onClick={onScroll}>
-					<HorizontalScrollIcon
-						className={scrollGap ? 'scroll-icon-to-right' : 'scroll-icon-to-left'}
-					/>
+				<ActionsBlock>
+					<IconButton onClick={onScroll}>
+						<HorizontalScrollIcon
+							className={scrollGap ? 'scroll-icon-to-right' : 'scroll-icon-to-left'}
+						/>
+					</IconButton>
 				</ActionsBlock>
 			)}
 		</Wrapper>
