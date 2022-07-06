@@ -32,21 +32,21 @@ export const ChannelRowBreakdownItem = ({
 		setValue(itemValue);
 	}, []);
 
-	const handleCancelItemChanges = () => {
+	const cancelItemChanges = () => {
 		setIsEdit(false);
 		setValue(itemValue);
 	};
 
-	const handleSaveItemChanges = () => {
+	const saveItemChanges = () => {
 		setIsEdit(false);
 		onUpdateChannelBudgetData(itemName, value);
 	};
 
-	const onChangeBreakdownItemValue = (e) => {
+	const changeBreakdownItemValue = (e) => {
 		setValue(e.target.value.slice(1));
 	};
 
-	const ref = useOutsideClick(handleCancelItemChanges);
+	const ref = useOutsideClick(cancelItemChanges);
 
 	return (
 		<ChannelRowBreakdownItemWrapper
@@ -65,15 +65,15 @@ export const ChannelRowBreakdownItem = ({
 							disabled={disabled}
 							isNumericString={true}
 							name={itemName}
-							onChange={onChangeBreakdownItemValue}
+							onChange={changeBreakdownItemValue}
 							placeholder={value}
 							prefix={PREFIX}
 							thousandSeparator={true}
 							value={value}
 						/>
 						<EditActionsWrapper>
-							<SaveIcon onClick={handleSaveItemChanges} />
-							<CancelIcon onClick={handleCancelItemChanges} />
+							<SaveIcon onClick={saveItemChanges} />
+							<CancelIcon onClick={cancelItemChanges} />
 						</EditActionsWrapper>
 					</BreakdownInputWrapper>
 				) : (

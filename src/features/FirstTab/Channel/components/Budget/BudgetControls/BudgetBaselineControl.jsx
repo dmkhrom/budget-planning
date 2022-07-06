@@ -4,12 +4,12 @@ import PropTypes from 'prop-types';
 import { NumericInput } from 'components';
 import { BudgetBaselineControlWrapper } from 'features/FirstTab/Channel/styles';
 
-export const BudgetBaselineControl = ({ annualAmount, onAmountChange, disabled }) => (
+export const BudgetBaselineControl = ({ annualAmount, onAnnualBudgetAmountChange, disabled }) => (
 	<BudgetBaselineControlWrapper>
 		<LabelWithTooltip label="Baseline [Annual] Budget" tooltipDescription="Annual budget amount" />
 		<NumericInput
 			value={annualAmount}
-			onChange={onAmountChange}
+			onChange={onAnnualBudgetAmountChange}
 			disabled={disabled}
 			allowLeadingZeros={false}
 			isNumericString={true}
@@ -21,6 +21,6 @@ export const BudgetBaselineControl = ({ annualAmount, onAmountChange, disabled }
 
 BudgetBaselineControl.propTypes = {
 	annualAmount: PropTypes.number,
-	onAmountChange: PropTypes.func,
+	onAnnualBudgetAmountChange: PropTypes.func,
 	disabled: PropTypes.bool
 };

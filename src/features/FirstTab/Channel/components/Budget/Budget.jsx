@@ -18,7 +18,7 @@ export const Budget = ({ channelData }) => {
 
 	const dispatch = useDispatch();
 
-	const onChangeBudgetFrequency = (e) => {
+	const onSelectBudgetFrequency = (e) => {
 		if (e.target.innerText === frequency) {
 			return;
 		}
@@ -89,8 +89,8 @@ export const Budget = ({ channelData }) => {
 			<BudgetControls
 				budgetFrequency={frequency}
 				annualAmount={amount}
-				onAmountChange={debouncedAnnualBudgetAmountChange}
-				onSelectBudgetFrequency={onChangeBudgetFrequency}
+				onAnnualBudgetAmountChange={debouncedAnnualBudgetAmountChange}
+				onSelectBudgetFrequency={onSelectBudgetFrequency}
 				onChangeAllocationType={onChangeAllocationType}
 				allocationType={allocation}
 				disabledBaselineControl={allocation === 'Manual'}

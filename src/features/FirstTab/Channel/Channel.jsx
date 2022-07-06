@@ -19,7 +19,7 @@ export const Channel = ({ isActive, channelData }) => {
 		setInputFocus();
 	}, [isEditChannelName]);
 
-	const changeChannelName = (e) => {
+	const onChangeChannelName = (e) => {
 		const dataToUpdate = {
 			...channelData,
 			name: e.target.value
@@ -27,35 +27,35 @@ export const Channel = ({ isActive, channelData }) => {
 		dispatch(updateChannel(dataToUpdate));
 	};
 
-	const handleChangeActiveChannel = (e) => {
+	const changeActiveChannel = (e) => {
 		if (e.target.className.includes('channel-actions')) {
 			return;
 		}
 		dispatch(setActiveChannelId(isActive ? null : id));
 	};
 
-	const handleDeleteChannel = () => {
+	const onDeleteChannel = () => {
 		dispatch(deleteChannel(id));
 	};
 
-	const closeNameEdit = () => {
+	const onCloseNameEdit = () => {
 		setIsEditChannelName(false);
 	};
 
 	return (
 		<ChannelWrapper>
-			<ChannelItem isActive={isActive} onClick={handleChangeActiveChannel}>
+			<ChannelItem isActive={isActive} onClick={changeActiveChannel}>
 				<ChannelInfo
 					channelName={name}
 					isEdit={isEditChannelName}
-					onCloseNameEdit={closeNameEdit}
-					onChangeChannelName={changeChannelName}
+					onCloseNameEdit={onCloseNameEdit}
+					onChangeChannelName={onChangeChannelName}
 					inputRef={inputRef}
 				/>
 				<ChannelActions
 					id={id}
-					editChannelName={setIsEditChannelName}
-					onDeleteChannel={handleDeleteChannel}
+					setIsEditChannelName={setIsEditChannelName}
+					onDeleteChannel={onDeleteChannel}
 				/>
 			</ChannelItem>
 			{isActive && (

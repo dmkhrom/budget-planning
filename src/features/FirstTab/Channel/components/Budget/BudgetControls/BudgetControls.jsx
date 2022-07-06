@@ -11,7 +11,7 @@ export const BudgetControls = ({
 	onSelectBudgetFrequency,
 	budgetFrequency,
 	annualAmount,
-	onAmountChange,
+	onAnnualBudgetAmountChange,
 	onChangeAllocationType,
 	allocationType,
 	disabledBaselineControl
@@ -23,7 +23,7 @@ export const BudgetControls = ({
 		/>
 		<BudgetBaselineControl
 			annualAmount={annualAmount || 0}
-			onAmountChange={onAmountChange}
+			onAnnualBudgetAmountChange={onAnnualBudgetAmountChange}
 			disabled={disabledBaselineControl}
 		/>
 		<BudgetAllocationControl
@@ -39,6 +39,6 @@ BudgetControls.propTypes = {
 	budgetFrequency: PropTypes.string,
 	onChangeAllocationType: PropTypes.func,
 	disabledBaselineControl: PropTypes.bool,
-	onAmountChange: PropTypes.func,
+	onAnnualBudgetAmountChange: PropTypes.func,
 	onSelectBudgetFrequency: PropTypes.func
 };
