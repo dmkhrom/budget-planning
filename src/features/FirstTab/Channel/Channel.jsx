@@ -28,7 +28,9 @@ export const Channel = ({ isActive, channelData, setActiveChannelId }) => {
 	};
 
 	const handleChangeActiveChannel = (e) => {
-		e.stopPropagation();
+		if(e.target.className.includes('channel-actions')) {
+			return;
+		}
 		setActiveChannelId(isActive ? null : id);
 	};
 

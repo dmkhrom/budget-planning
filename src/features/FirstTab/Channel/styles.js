@@ -47,8 +47,8 @@ export const ChannelNameWrapper = styled.div`
 export const ChannelActionsWrapper = styled.div`
 	display: flex;
 	align-items: center;
-	& .actions-icon {
-		height: 100%;
+	& svg {
+		pointer-events: none;
 	}
 `;
 
