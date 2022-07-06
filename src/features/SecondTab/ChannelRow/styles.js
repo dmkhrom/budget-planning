@@ -88,7 +88,7 @@ export const BreakdownValueWrapper = styled.div`
 `;
 
 export const EditButtonWrapper = styled.div`
-	visibility: ${({ visible}) => visible ? 'visible' : 'hidden'};
+	visibility: ${({ visible }) => (visible ? 'visible' : 'hidden')};
 	position: absolute;
 	right: 0;
 	bottom: 7px;

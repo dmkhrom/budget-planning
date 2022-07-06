@@ -11,7 +11,8 @@ import {
 	EditActionsWrapper,
 	BreakdownInput,
 	BreakdownInputWrapper,
-	BreakdownItemLabel, EditButtonWrapper
+	BreakdownItemLabel,
+	EditButtonWrapper
 } from 'features/SecondTab/ChannelRow/styles';
 import { useOutsideClick } from 'hooks/useOutsideClick';
 
@@ -86,9 +87,7 @@ export const ChannelRowBreakdownItem = ({
 					}
 				>
 					<EditButtonWrapper visible={!isEdit && showEditIcon}>
-						<IconButton
-							onClick={() => isManualType && setIsEdit(true)}
-						>
+						<IconButton onClick={() => isManualType && setIsEdit(true)}>
 							<EditIcon />
 						</IconButton>
 					</EditButtonWrapper>
